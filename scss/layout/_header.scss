@@ -3,3 +3,72 @@
 /* ============================================= */
 /*                 Header                        */
 /* ============================================= */
+
+#main-backend-header {
+	display: flex;
+	height: 50px;
+	padding: 5px;
+	justify-content: space-between;
+	background-color: $primary-color;
+	color: $font-color-light;
+}
+
+#header-icons {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 50%;
+	margin-right: 10px;
+	p {
+		color: $font-color-light;
+	}
+}
+
+#seperator {
+	border: $secondary-color .1px solid;
+	height: 80%;
+	width: .1px;
+	margin: 0 10px;
+}
+
+#logo {
+	position: relative;
+	width: 50%;
+	display: flex;
+	margin-left: 10px;
+	
+}
+
+#logo > * {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#side-menu-button {
+	height: 45%;
+	display:inline-block;
+	margin-right: 10px;
+	@include mq(tablet) {
+		display: none;
+	}
+}
+
+#notification-alert {
+	border-radius: 50%;
+	width: 6px;
+	height: 6px;
+	background-color: $alert-color;
+	position: absolute;
+	right: 0px;
+	top: -5px;
+}
+
+#notification {
+	height: 50%;
+	width: 23px;
+	position: relative;
+}
+
+#notification-icon {
+	width: 100%;
+}

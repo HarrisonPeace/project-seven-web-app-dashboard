@@ -4,6 +4,53 @@
 /*              Navigation                       */
 /* ============================================= */
 
+nav {
+	position: absolute;
+	background-color: $secondary-color;
+	color: $font-color-light;
+	padding: 10px 10px 10px 0;
+	top: 0px;
+	border-radius: 0 0 10px 0;
+	display: none;
+	grid-area: nav;
+	@include mq(tablet) {
+		display: block;
+		position: inherit;
+		padding: 0;
+	}
+	img {
+	width: 40px;
+	display: inline;
+	@include mq(tablet) {
+		width: 70%;
+	}
+	}
+	h3 {
+	margin: 0;
+	font-size: .8em;
+	display: inline;
+	@include mq(tablet) {
+		display: none;
+	}
+	}
+	div {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 10px 10px 10px -2px;
+	padding: 10px;
+	border: 2px $secondary-color solid;
+	border-radius: 0 10px 10px 0;
+	width: 200px;
+	@include mq(tablet) {
+		width: 100%;
+		margin: 13px auto;
+	}
+	}
+	.nav-selected {
+	border-left: solid 2.5px $alert-color;
+}
+}
 
 
 

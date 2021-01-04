@@ -7,5 +7,198 @@
 </head>
 
 <body>
+	<header id="main-backend-header">
+		<div id="logo">
+			<img src="icons/icon-menu.svg" alt="menu-icon" id="side-menu-button">
+			<span id="logo-your"><i>Your</i></span><span id="logo-app">App<span id="logo-tm">TM</span></span>
+		</div>
+		<div id="header-icons">
+			<div id="notification">
+				<img src="icons/icon-bell.svg" alt="notifiction-icon" id="notifiction-icon">
+				<div id="notification-alert"></div>
+			</div>
+			<span id="seperator"></span>
+			<img src="images/member-1.jpg" alt="profile-picture" id="profile-picture">
+			<p>Josh Sullivan</p>
+		</div>
+	</header>
+	<nav id="dashboard-side-navigation">
+		<div class="nav-selected">
+		<img src="icons/icon-dashboard.svg" alt="dashboard-icon">
+		<h3>Dashboard</h3>
+		</div>
+		<div>
+		<img src="icons/icon-members.svg" alt="members-icon">
+		<h3>Members</h3>
+		</div>
+		<div>
+		<img src="icons/icon-visits.svg" alt="visits-icon">
+		<h3>Visits</h3>
+		</div>
+		<div>
+		<img src="icons/icon-settings.svg" alt="settings-icon">
+		<h3>Settings</h3>
+		</div>
+	</nav>
+	<main>
+		<section id="dashboard-header">
+			<h1>Dashboard</h1>
+			<input type="search" id="dashboard-search" placeholder="search">
+		</section>
+		<section id="traffic-data">
+			<div id="traffic-data-heading">
+				<h2>Traffic</h2>
+				<div>
+					<h3>Hourly</h3>
+					<h3>Daily</h3>
+					<h3>Weekly</h3>
+					<h3>Monthly</h3>
+				</div>
+			</div>
+			<canvas id="traffic-chart"></canvas>
+		</section>
+		<section id="daily-traffic-data">
+			<h2>Daily Traffic</h2>
+			<canvas id="daily-traffic-chart"></canvas>
+		</section>
+		<section id="mobile-data">
+			<h2>Mobile Users</h2>
+			<canvas id="mobile-users-chart"></canvas>
+		</section>
+		<section id="social-stats">
+			<h2>Social Stats</h2>
+			<div>
+				<div class="social-icon">
+				<img src="icons/icon-twitter.svg" alt="twitter-icon">
+				</div>
+				<span>Twitter</span>
+				<span>10,345</span>
+			</div>
+			<div>
+				<div class="social-icon">
+					<img src="icons/icon-facebook.svg" alt="facebook-icon">
+				</div>
+				<span>Facebook</span>
+				<span>8,739</span>
+			</div>
+			<div>
+				<div class="social-icon">
+					<img src="icons/icon-google-plus.svg" alt="google-plus-icon">
+				</div>
+				<span>Google+</span>
+				<span>2,530</span>
+			</div>
+		</section>
+		<section id="new-member-dashboard">
+			<h2>New Members</h2>
+			<div class="new-members">
+				<div class="contact-info">
+					<img src="images/member-1.jpg" alt="picture-of-new-member">
+					<div>
+						<p>Victoria Chambers</p>
+						<p><a href="mailto:victoria.chambers@yourapp.com">victoria.chambers@yourapp.com</a></p>
+					</div>
+				</div>
+				<p>01/12/20</p>
+			</div>
+			<div class="new-members">
+				<div class="contact-info">
+					<img src="images/member-1.jpg" alt="picture-of-new-member">
+					<p>Dale Byrd</p>
+					<p><a href="mailto:dale.byrd@yourapp.com">dale.byrd@yourapp.com</a></p>
+				</div>
+				<p>06/12/20</p>
+			</div>
+			<div class="new-members">
+				<div class="contact-info">
+					<img src="images/member-1.jpg" alt="picture-of-new-member">
+					<p>Dawn Wood</p>
+					<p><a href="mailto:dawn.wood@yourapp.com">dawn.wood@yourapp.com</a></p>
+				</div>
+				<p>09/12/20</p>
+			</div>
+			<div class="new-members">
+				<div class="contact-info">
+					<img src="images/member-1.jpg" alt="picture-of-new-member">
+					<p>Dan Oliver</p>
+					<p><a href="mailto:dan.oliver@yourapp.com">dan.oliver@yourapp.com</a></p>
+				</div>
+				<p>15/12/20</p>
+			</div>
+		</section>
+		<section id="recent-activity-dashbaord">
+			<h2>Recent Activity</h2>
+			<div class="recent-activity">
+				<div class="contact-info">
+					<img src="images/member-1.jpg" alt="picture-of-new-member">
+					<p>Victoria Chambers commented on YourApp's SEo Tips</p>
+					<p>4 hours ago</p>
+				</div>
+				<img class="recent-activity-icon" src="icons/icon-bell.svg" alt="Recent Acivity Arrow">
+			</div>
+			<div class="recent-activity">
+				<div class="contact-info">
+					<img src="images/member-1.jpg" alt="picture-of-new-member">
+					<p>Dale Byrd liked "Facebook's Changes For 2016"</p>
+					<p>5 hours ago</p>
+				</div>
+				<img class="recent-activity-icon" src="icons/icon-bell.svg" alt="Recent Acivity Arrow">
+			</div>
+			<div class="recent-activity">
+				<div class="contact-info">
+					<img src="images/member-1.jpg" alt="picture-of-new-member">
+					<p>Dawn Wood commented on "Facebook's Changes For 2016"</p>
+					<p>5 hours ago</p>
+				</div>
+				<img class="recent-activity-icon" src="icons/icon-bell.svg" alt="Recent Acivity Arrow">
+			</div>
+			<div class="recent-activity">
+				<div class="contact-info">
+					<img src="images/member-1.jpg" alt="picture-of-new-member">
+					<p>Dan Oliver posted "YourApp's SEO Tips"</p>
+					<p>1 day ago</p>
+				</div>
+				<img class="recent-activity-icon" src="icons/icon-bell.svg" alt="Recent Acivity Arrow">
+			</div>
+		</section>
+		<section id="message-users-form">
+			<h2>Message User</h2>
+			<form>
+				<input type="search" id="user-search" placeholder="Search For User">
+				<textarea></textarea>
+				<button type="submit"><h2>Send</h2></button>
+			</form>
+		</section>
+		<section id="dashboard-settings">
+			<h2>Dashboard Settings</h2>
+			<form>
+				<div class="switch-container">
+					<span class="switch-heading">Send Email Notifications</span>
+					<label class="switch" for="email-checkbox">
+						<input type="checkbox" checked id="email-checkbox" name="email-checkbox">
+						<span class="slider">
+							<span class="switch-text">YES</span>
+						</span>
+					</label>
+				</div>
+				<div class="switch-container">
+					<span class="switch-heading">Sent Profile To Public</span>
+					<label class="switch" for="profile-checkbox">
+						<input type="checkbox" checked id="profile-checkbox" name="profile-checkbox">
+						<span class="slider">
+							<span class="switch-text">YES</span>
+						</span>
+					</label>
+				</div>
+				<select id="time-zone" name="time-zone">
+			  		<option value="a-e-s-t">Australian Eastern Standard Time (AEST)</option>
+			 		<option value="a-c-s-t">Australian Central Standard Time (ACST)</option>
+			  		<option value="a-w-s-t">Australian Western Standard Time (AWST)</option>
+				</select><br>
+				<button type="submit"><h2>Save</h2></button>
+				<button type="button"><h2>Cancel</h2></button>
+			</form>
+		</section>
+	</main>
 </body>
 </html>

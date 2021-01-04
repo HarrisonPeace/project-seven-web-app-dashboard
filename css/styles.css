@@ -6,6 +6,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 /* line 13, ../scss/base/_normalize.scss */
 html {
   line-height: 1.15;
@@ -345,9 +346,62 @@ template {
 * {
   box-sizing: border-box; }
 
+/* line 11, ../scss/base/_base.scss */
+html {
+  min-width: 360px; }
+
+/* line 15, ../scss/base/_base.scss */
+body {
+  width: 100%; }
+
 /* ============================================= */
 /*              Typography                       */
 /* ============================================= */
+/* line 8, ../scss/base/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; }
+
+/* line 19, ../scss/base/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #4d4d4d; }
+
+/* line 29, ../scss/base/_typography.scss */
+#logo-app {
+  font-weight: 100;
+  font-size: 1.6em;
+  display: inline-block; }
+
+/* line 35, ../scss/base/_typography.scss */
+#logo-your {
+  font-weight: 900;
+  font-size: 1.6em;
+  display: inline-block;
+  position: relative; }
+
+/* line 42, ../scss/base/_typography.scss */
+#logo-tm {
+  font-weight: 300;
+  font-size: .4em;
+  padding-bottom: 60%;
+  position: absolute; }
+
+/* line 49, ../scss/base/_typography.scss */
+p {
+  font-family: 'Nunito Sans', sans-serif; }
+
 /* Scss Document */
 /* ============================================= */
 /*              Grid System                      */
@@ -356,6 +410,58 @@ template {
 /* ============================================= */
 /*              Navigation                       */
 /* ============================================= */
+/* line 7, ../scss/component/_navigation.scss */
+nav {
+  position: absolute;
+  background-color: #4d4c72;
+  color: #fff;
+  padding: 10px 10px 10px 0;
+  top: 0px;
+  border-radius: 0 0 10px 0;
+  display: none;
+  grid-area: nav; }
+  @media (min-width: 768px) {
+    /* line 7, ../scss/component/_navigation.scss */
+    nav {
+      display: block;
+      position: inherit;
+      padding: 0; } }
+  /* line 21, ../scss/component/_navigation.scss */
+  nav img {
+    width: 40px;
+    display: inline; }
+    @media (min-width: 768px) {
+      /* line 21, ../scss/component/_navigation.scss */
+      nav img {
+        width: 70%; } }
+  /* line 28, ../scss/component/_navigation.scss */
+  nav h3 {
+    margin: 0;
+    font-size: .8em;
+    display: inline; }
+    @media (min-width: 768px) {
+      /* line 28, ../scss/component/_navigation.scss */
+      nav h3 {
+        display: none; } }
+  /* line 36, ../scss/component/_navigation.scss */
+  nav div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 10px 10px -2px;
+    padding: 10px;
+    border: 2px #4d4c72 solid;
+    border-radius: 0 10px 10px 0;
+    width: 200px; }
+    @media (min-width: 768px) {
+      /* line 36, ../scss/component/_navigation.scss */
+      nav div {
+        width: 100%;
+        margin: 13px auto; } }
+  /* line 50, ../scss/component/_navigation.scss */
+  nav .nav-selected {
+    border-left: solid 2.5px #75f56e; }
+
 /* Scss Document */
 /* ============================================= */
 /*              Buttons                          */
@@ -368,11 +474,202 @@ template {
 /* ============================================= */
 /*              Images                           */
 /* ============================================= */
+/* line 7, ../scss/component/_images.scss */
+#profile-picture {
+  border: hidden;
+  border-radius: 100%;
+  height: 75%;
+  margin-right: 10px; }
+
+/* CSS Document */
+/* line 3, ../scss/component/_switch.scss */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px; }
+
+/* line 10, ../scss/component/_switch.scss */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0; }
+
+/* line 16, ../scss/component/_switch.scss */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+/* line 29, ../scss/component/_switch.scss */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+/* line 42, ../scss/component/_switch.scss */
+input:checked + .slider {
+  background-color: #2196F3; }
+
+/* line 46, ../scss/component/_switch.scss */
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3; }
+
+/* line 50, ../scss/component/_switch.scss */
+input:checked + .slider:before {
+  -webkit-transform: translateX(56px);
+  -ms-transform: translateX(56px);
+  transform: translateX(56px); }
+
+/* line 56, ../scss/component/_switch.scss */
+.switch-text {
+  position: absolute;
+  top: 8px;
+  left: 17px;
+  right: 0;
+  bottom: 0; }
+
+/* line 64, ../scss/component/_switch.scss */
+.switch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between; }
+  /* line 69, ../scss/component/_switch.scss */
+  .switch-container .switch-heading {
+    margin-left: 0.5em; }
+  /* line 72, ../scss/component/_switch.scss */
+  .switch-container label {
+    margin-right: 0.5em; }
+
 /* Scss Document */
 /* Scss Document */
 /* ============================================= */
 /*              Containers                       */
 /* ============================================= */
+/* line 6, ../scss/layout/_containers.scss */
+body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 65px 1fr;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: "header header" "main main"; }
+  @media (min-width: 768px) {
+    /* line 6, ../scss/layout/_containers.scss */
+    body {
+      grid-template-areas: "header header" "nav main"; } }
+
+/* line 21, ../scss/layout/_containers.scss */
+header {
+  grid-area: header; }
+
+/* line 25, ../scss/layout/_containers.scss */
+main {
+  grid-area: main;
+  margin-bottom: 3em; }
+
+/* line 32, ../scss/layout/_containers.scss */
+#dashboard-header {
+  display: flex;
+  justify-content: space-between; }
+  /* line 35, ../scss/layout/_containers.scss */
+  #dashboard-header h1 {
+    margin: 5px 5px 5px 10px;
+    font-size: 1.5em; }
+  /* line 39, ../scss/layout/_containers.scss */
+  #dashboard-header #dashboard-search {
+    margin: 5px 10px 5px 5px; }
+
+/* line 45, ../scss/layout/_containers.scss */
+#traffic-data #traffic-data-heading {
+  display: flex;
+  justify-content: space-between; }
+  /* line 48, ../scss/layout/_containers.scss */
+  #traffic-data #traffic-data-heading div {
+    display: flex;
+    justify-content: space-around; }
+
+/* line 55, ../scss/layout/_containers.scss */
+canvas {
+  width: 100%;
+  background-color: aqua; }
+
+/* line 60, ../scss/layout/_containers.scss */
+#social-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  /* line 64, ../scss/layout/_containers.scss */
+  #social-stats div {
+    display: flex;
+    align-items: center; }
+  /* line 68, ../scss/layout/_containers.scss */
+  #social-stats h2 {
+    flex-basis: 100%; }
+  /* line 71, ../scss/layout/_containers.scss */
+  #social-stats .social-icon {
+    background-color: aqua;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    /* line 79, ../scss/layout/_containers.scss */
+    #social-stats .social-icon img {
+      width: 60%; }
+
+/* line 85, ../scss/layout/_containers.scss */
+.contact-info {
+  width: 80%; }
+
+/* line 89, ../scss/layout/_containers.scss */
+.new-members,
+.recent-activity {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  /* line 95, ../scss/layout/_containers.scss */
+  .new-members img,
+  .recent-activity img {
+    float: left;
+    clear: both; }
+
+/* line 101, ../scss/layout/_containers.scss */
+.recent-activity-icon {
+  width: 1em;
+  height: 1em; }
+
+/* line 106, ../scss/layout/_containers.scss */
+#message-users-form form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; }
+
+/* line 113, ../scss/layout/_containers.scss */
+#dashboard-settings button {
+  Width: 49%; }
+/* line 116, ../scss/layout/_containers.scss */
+#dashboard-settings select {
+  width: 90%;
+  margin: auto;
+  display: block; }
+
 /* Scss Document */
 /* ============================================= */
 /*                     Footer                    */
@@ -381,5 +678,73 @@ template {
 /* ============================================= */
 /*                 Header                        */
 /* ============================================= */
+/* line 7, ../scss/layout/_header.scss */
+#main-backend-header {
+  display: flex;
+  height: 50px;
+  padding: 5px;
+  justify-content: space-between;
+  background-color: #7477bf;
+  color: #fff; }
+
+/* line 16, ../scss/layout/_header.scss */
+#header-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  margin-right: 10px; }
+  /* line 22, ../scss/layout/_header.scss */
+  #header-icons p {
+    color: #fff; }
+
+/* line 27, ../scss/layout/_header.scss */
+#seperator {
+  border: #4d4c72 0.1px solid;
+  height: 80%;
+  width: .1px;
+  margin: 0 10px; }
+
+/* line 34, ../scss/layout/_header.scss */
+#logo {
+  position: relative;
+  width: 50%;
+  display: flex;
+  margin-left: 10px; }
+
+/* line 42, ../scss/layout/_header.scss */
+#logo > * {
+  margin-top: auto;
+  margin-bottom: auto; }
+
+/* line 47, ../scss/layout/_header.scss */
+#side-menu-button {
+  height: 45%;
+  display: inline-block;
+  margin-right: 10px; }
+  @media (min-width: 768px) {
+    /* line 47, ../scss/layout/_header.scss */
+    #side-menu-button {
+      display: none; } }
+
+/* line 56, ../scss/layout/_header.scss */
+#notification-alert {
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: #75f56e;
+  position: absolute;
+  right: 0px;
+  top: -5px; }
+
+/* line 66, ../scss/layout/_header.scss */
+#notification {
+  height: 50%;
+  width: 23px;
+  position: relative; }
+
+/* line 72, ../scss/layout/_header.scss */
+#notification-icon {
+  width: 100%; }
 
 /*# sourceMappingURL=styles.css.map */

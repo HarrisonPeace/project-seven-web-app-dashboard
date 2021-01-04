@@ -3,3 +3,122 @@
 /* ============================================= */
 /*              Containers                       */
 /* ============================================= */
+body {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 65px 1fr;
+	grid-template-rows: 50px 1fr;
+	grid-template-areas: 
+		"header header"
+		"main main";
+	@include mq(tablet) {
+	grid-template-areas: 
+		"header header"
+		"nav main"
+	}
+}
+
+header {
+	grid-area: header;
+}
+
+main {
+	grid-area: main;
+	margin-bottom: 3em;
+}
+
+
+
+#dashboard-header {
+	display: flex;
+	justify-content: space-between;
+	h1 {
+		margin: 5px 5px 5px 10px;
+		font-size: 1.5em;
+	}
+	#dashboard-search {
+		margin: 5px 10px 5px 5px;	
+	}
+}
+
+#traffic-data {
+	#traffic-data-heading {
+		display: flex;
+		justify-content: space-between;
+		div {
+			display: flex;
+			justify-content: space-around;
+		}
+	}
+}
+
+canvas {
+	width: 100%;
+	background-color: aqua;
+}
+
+#social-stats {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	div {
+		display: flex;
+		align-items: center;
+	}
+	h2 {
+		flex-basis: 100%
+	}
+	.social-icon {
+		background-color: aqua;
+		border-radius: 50%;
+		width: 3em;
+		height: 3em;
+		display: flex;
+ 		justify-content: center;
+  		align-items: center;
+		img {
+			width: 60%;
+		}
+	}
+}
+
+.contact-info {
+	width: 80%
+}
+
+.new-members,
+.recent-activity{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	img {
+		float: left;
+		clear: both;
+	}
+}
+
+.recent-activity-icon {
+	width: 1em;
+	height: 1em;
+}
+
+#message-users-form form{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+#dashboard-settings {
+	button {
+		Width: 49%;
+	}
+	select {
+		width: 90%;
+		margin: auto;
+		display: block;
+	}
+}
+
+
+

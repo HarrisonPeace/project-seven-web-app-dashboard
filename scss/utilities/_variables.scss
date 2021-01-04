@@ -1,36 +1,36 @@
 // Scss Document //
 
-// ============================================= //
-//                  Variables                    //
+// ============================================= 
+//                  Variables                    
 // ============================================= //
 
-////---------- Descriptive Colors ----------//
-//
-//$white                : #fff;
-//$black                : #000;
-//$gray                 : #777;
-//
+//---------- Descriptive Colors ----------//
+
+$white				  : #fff;
+$black                : #000;
+$gray                 : #4d4d4d;
+$main-purple		  : #7477bf;
+$dark-purple		  : #4d4c72;
+$bright-green		  : #75f56e;
+
 ////----------- Functional Colors ----------//
-//
-//$primary-color        : 
-//$secondary-color      : 
-//
-//$main-font-color      : 
-//
-//$error-color          : 
-//$warning-color        : 
-//$success-color        : 
-//$info-color           : 
-//
-//
+
+$primary-color        : $main-purple;
+$secondary-color      : $dark-purple;
+
+$font-color-dark      : $gray;
+$font-color-light	  : $white;
+
+$alert-color		  : $bright-green;
+
 ////----------- Padding / Margin ----------//
 //
 //$std-padding          :
 //$std-margin           : 
-//
-////------------ Break Points ------------//
-//
-//$breakpoint: (
-//	'tablet'          : 768px,
-//	'laptop'          : 1024px,
-//);
+
+// ------------ Break Points ------------//
+
+$breakpoint: (
+	'tablet'          : 768px,
+	'laptop'          : 1024px,
+);
