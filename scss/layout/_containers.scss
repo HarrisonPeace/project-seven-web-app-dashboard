@@ -28,19 +28,6 @@ main {
 }
 
 
-
-#dashboard-header {
-	display: flex;
-	justify-content: space-between;
-	h1 {
-		margin: 5px 5px 5px 10px;
-		font-size: 1.5em;
-	}
-	#dashboard-search {
-		margin: 5px 10px 5px 5px;	
-	}
-}
-
 #traffic-data {
 	#traffic-data-heading {
 		display: flex;
@@ -54,7 +41,7 @@ main {
 
 canvas {
 	width: 100%;
-	background-color: aqua;
+	background-color: $primary-color;
 }
 
 #social-stats {
@@ -69,7 +56,7 @@ canvas {
 		flex-basis: 100%
 	}
 	.social-icon {
-		background-color: aqua;
+		background-color: $primary-color;
 		border-radius: 50%;
 		width: 3em;
 		height: 3em;
@@ -78,6 +65,7 @@ canvas {
   		align-items: center;
 		img {
 			width: 60%;
+			color: $white;
 		}
 	}
 }
@@ -120,5 +108,34 @@ canvas {
 	}
 }
 
+#dashboard-header {
+	display: flex;
+	justify-content: space-between;
+	h1 {
+		display: inline-block;
+		padding: 0 2px;
+		margin: 5px 5px 5px 5px;
+		font-size: 1.5em;
+	}
+	div {
+		width: 100%;
+		background-color: $light-gray;
+		border-bottom: solid $gray 0.5px;
+		border-left: solid $gray 0.5px;
+		text-align: end;
+		border-radius: 2px;
+	}
+	input {
+		border-radius: 3px;
+		border: solid 1px $gray;
+		margin: 5px 10px 5px 5px;
+		padding: 2px 3px;
+		placeholder {
+			padding-left: 2px;
+			text-transform: capitalize;
+		}
+		
+	}
+}
 
 

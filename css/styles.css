@@ -399,8 +399,14 @@ p {
   position: absolute; }
 
 /* line 49, ../scss/base/_typography.scss */
-p {
-  font-family: 'Nunito Sans', sans-serif; }
+p,
+placeholder {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300; }
+
+/* line 55, ../scss/base/_typography.scss */
+header p {
+  letter-spacing: .2px; }
 
 /* Scss Document */
 /* ============================================= */
@@ -583,92 +589,110 @@ main {
   margin-bottom: 3em; }
 
 /* line 32, ../scss/layout/_containers.scss */
-#dashboard-header {
-  display: flex;
-  justify-content: space-between; }
-  /* line 35, ../scss/layout/_containers.scss */
-  #dashboard-header h1 {
-    margin: 5px 5px 5px 10px;
-    font-size: 1.5em; }
-  /* line 39, ../scss/layout/_containers.scss */
-  #dashboard-header #dashboard-search {
-    margin: 5px 10px 5px 5px; }
-
-/* line 45, ../scss/layout/_containers.scss */
 #traffic-data #traffic-data-heading {
   display: flex;
   justify-content: space-between; }
-  /* line 48, ../scss/layout/_containers.scss */
+  /* line 35, ../scss/layout/_containers.scss */
   #traffic-data #traffic-data-heading div {
     display: flex;
     justify-content: space-around; }
 
-/* line 55, ../scss/layout/_containers.scss */
+/* line 42, ../scss/layout/_containers.scss */
 canvas {
   width: 100%;
-  background-color: aqua; }
+  background-color: #7477bf; }
 
-/* line 60, ../scss/layout/_containers.scss */
+/* line 47, ../scss/layout/_containers.scss */
 #social-stats {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
-  /* line 64, ../scss/layout/_containers.scss */
+  /* line 51, ../scss/layout/_containers.scss */
   #social-stats div {
     display: flex;
     align-items: center; }
-  /* line 68, ../scss/layout/_containers.scss */
+  /* line 55, ../scss/layout/_containers.scss */
   #social-stats h2 {
     flex-basis: 100%; }
-  /* line 71, ../scss/layout/_containers.scss */
+  /* line 58, ../scss/layout/_containers.scss */
   #social-stats .social-icon {
-    background-color: aqua;
+    background-color: #7477bf;
     border-radius: 50%;
     width: 3em;
     height: 3em;
     display: flex;
     justify-content: center;
     align-items: center; }
-    /* line 79, ../scss/layout/_containers.scss */
+    /* line 66, ../scss/layout/_containers.scss */
     #social-stats .social-icon img {
-      width: 60%; }
+      width: 60%;
+      color: #fff; }
 
-/* line 85, ../scss/layout/_containers.scss */
+/* line 73, ../scss/layout/_containers.scss */
 .contact-info {
   width: 80%; }
 
-/* line 89, ../scss/layout/_containers.scss */
+/* line 77, ../scss/layout/_containers.scss */
 .new-members,
 .recent-activity {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  /* line 95, ../scss/layout/_containers.scss */
+  /* line 83, ../scss/layout/_containers.scss */
   .new-members img,
   .recent-activity img {
     float: left;
     clear: both; }
 
-/* line 101, ../scss/layout/_containers.scss */
+/* line 89, ../scss/layout/_containers.scss */
 .recent-activity-icon {
   width: 1em;
   height: 1em; }
 
-/* line 106, ../scss/layout/_containers.scss */
+/* line 94, ../scss/layout/_containers.scss */
 #message-users-form form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap; }
 
-/* line 113, ../scss/layout/_containers.scss */
+/* line 101, ../scss/layout/_containers.scss */
 #dashboard-settings button {
   Width: 49%; }
-/* line 116, ../scss/layout/_containers.scss */
+/* line 104, ../scss/layout/_containers.scss */
 #dashboard-settings select {
   width: 90%;
   margin: auto;
   display: block; }
+
+/* line 111, ../scss/layout/_containers.scss */
+#dashboard-header {
+  display: flex;
+  justify-content: space-between; }
+  /* line 114, ../scss/layout/_containers.scss */
+  #dashboard-header h1 {
+    display: inline-block;
+    padding: 0 2px;
+    margin: 5px 5px 5px 5px;
+    font-size: 1.5em; }
+  /* line 120, ../scss/layout/_containers.scss */
+  #dashboard-header div {
+    width: 100%;
+    background-color: #ededed;
+    border-bottom: solid #4d4d4d 0.5px;
+    border-left: solid #4d4d4d 0.5px;
+    text-align: end;
+    border-radius: 2px; }
+  /* line 128, ../scss/layout/_containers.scss */
+  #dashboard-header input {
+    border-radius: 3px;
+    border: solid 1px #4d4d4d;
+    margin: 5px 10px 5px 5px;
+    padding: 2px 3px; }
+    /* line 133, ../scss/layout/_containers.scss */
+    #dashboard-header input placeholder {
+      padding-left: 2px;
+      text-transform: capitalize; }
 
 /* Scss Document */
 /* ============================================= */
