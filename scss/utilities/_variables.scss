@@ -32,6 +32,9 @@ $alert-color		  : $bright-green;
 // ------------ Break Points ------------//
 
 $breakpoint: (
-	'tablet'          : 768px,
-	'laptop'          : 1024px,
+	'social-container'  : 485px,
+	'social-icon'	    : 650px,
+	'tablet'            : 768px,
+	'laptop'            : 1024px,
+	'max-content-width' : 1100px,
 );

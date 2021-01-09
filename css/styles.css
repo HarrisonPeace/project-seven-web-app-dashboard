@@ -400,11 +400,12 @@ p {
 
 /* line 49, ../scss/base/_typography.scss */
 p,
-placeholder {
+placeholder
+#social stats span {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300; }
 
-/* line 55, ../scss/base/_typography.scss */
+/* line 56, ../scss/base/_typography.scss */
 header p {
   letter-spacing: .2px; }
 
@@ -587,95 +588,156 @@ header {
 main {
   grid-area: main;
   margin-bottom: 3em; }
+  /* line 28, ../scss/layout/_containers.scss */
+  main h2 {
+    margin-left: 7px; }
 
-/* line 32, ../scss/layout/_containers.scss */
-#traffic-data #traffic-data-heading {
+/* line 33, ../scss/layout/_containers.scss */
+.main-content-area {
+  max-width: 1100px;
+  margin: auto; }
+
+/* line 38, ../scss/layout/_containers.scss */
+#traffic-data-heading {
   display: flex;
   justify-content: space-between; }
-  /* line 35, ../scss/layout/_containers.scss */
-  #traffic-data #traffic-data-heading div {
+  /* line 41, ../scss/layout/_containers.scss */
+  #traffic-data-heading div {
     display: flex;
-    justify-content: space-around; }
+    justify-content: space-around;
+    margin-right: 1em; }
+  /* line 46, ../scss/layout/_containers.scss */
+  #traffic-data-heading h3 {
+    margin-left: 7px; }
 
-/* line 42, ../scss/layout/_containers.scss */
+/* line 52, ../scss/layout/_containers.scss */
 canvas {
   width: 100%;
   background-color: #7477bf; }
 
-/* line 47, ../scss/layout/_containers.scss */
+/* line 57, ../scss/layout/_containers.scss */
 #social-stats {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; }
-  /* line 51, ../scss/layout/_containers.scss */
-  #social-stats div {
-    display: flex;
-    align-items: center; }
-  /* line 55, ../scss/layout/_containers.scss */
+  justify-content: space-around; }
+  /* line 61, ../scss/layout/_containers.scss */
   #social-stats h2 {
     flex-basis: 100%; }
-  /* line 58, ../scss/layout/_containers.scss */
-  #social-stats .social-icon {
+
+/* line 66, ../scss/layout/_containers.scss */
+.social-stats-container {
+  width: 80%;
+  height: 70px;
+  background-color: #ededed;
+  border: solid #4d4d4d 0.5px;
+  border-radius: 2px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center; }
+  @media (min-width: 485px) {
+    /* line 66, ../scss/layout/_containers.scss */
+    .social-stats-container {
+      width: 30%; } }
+  /* line 79, ../scss/layout/_containers.scss */
+  .social-stats-container > div {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    @media (min-width: 485px) {
+      /* line 79, ../scss/layout/_containers.scss */
+      .social-stats-container > div {
+        width: 170px;
+        display: block; } }
+  /* line 90, ../scss/layout/_containers.scss */
+  .social-stats-container .social-icon {
     background-color: #7477bf;
     border-radius: 50%;
     width: 3em;
     height: 3em;
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center; }
-    /* line 66, ../scss/layout/_containers.scss */
-    #social-stats .social-icon img {
+    float: left; }
+    @media (min-width: 485px) {
+      /* line 90, ../scss/layout/_containers.scss */
+      .social-stats-container .social-icon {
+        display: none; } }
+    @media (min-width: 650px) {
+      /* line 90, ../scss/layout/_containers.scss */
+      .social-stats-container .social-icon {
+        display: flex; } }
+    /* line 105, ../scss/layout/_containers.scss */
+    .social-stats-container .social-icon img {
       width: 60%;
       color: #fff; }
+  /* line 110, ../scss/layout/_containers.scss */
+  .social-stats-container .social-number {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 100;
+    padding-left: 10px;
+    font-size: 2em; }
+  /* line 116, ../scss/layout/_containers.scss */
+  .social-stats-container .social-heading {
+    color: #7477bf;
+    font-weight: 600;
+    padding-left: 10px;
+    display: inline-block; }
+    @media (min-width: 485px) {
+      /* line 116, ../scss/layout/_containers.scss */
+      .social-stats-container .social-heading {
+        width: calc(100% - 48px); } }
 
-/* line 73, ../scss/layout/_containers.scss */
+/* line 127, ../scss/layout/_containers.scss */
 .contact-info {
   width: 80%; }
 
-/* line 77, ../scss/layout/_containers.scss */
+/* line 131, ../scss/layout/_containers.scss */
 .new-members,
 .recent-activity {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  /* line 83, ../scss/layout/_containers.scss */
+  /* line 137, ../scss/layout/_containers.scss */
   .new-members img,
   .recent-activity img {
     float: left;
     clear: both; }
 
-/* line 89, ../scss/layout/_containers.scss */
+/* line 143, ../scss/layout/_containers.scss */
 .recent-activity-icon {
   width: 1em;
   height: 1em; }
 
-/* line 94, ../scss/layout/_containers.scss */
+/* line 148, ../scss/layout/_containers.scss */
 #message-users-form form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap; }
 
-/* line 101, ../scss/layout/_containers.scss */
+/* line 155, ../scss/layout/_containers.scss */
 #dashboard-settings button {
   Width: 49%; }
-/* line 104, ../scss/layout/_containers.scss */
+/* line 158, ../scss/layout/_containers.scss */
 #dashboard-settings select {
   width: 90%;
   margin: auto;
   display: block; }
 
-/* line 111, ../scss/layout/_containers.scss */
+/* line 165, ../scss/layout/_containers.scss */
 #dashboard-header {
   display: flex;
   justify-content: space-between; }
-  /* line 114, ../scss/layout/_containers.scss */
+  /* line 168, ../scss/layout/_containers.scss */
   #dashboard-header h1 {
     display: inline-block;
     padding: 0 2px;
     margin: 5px 5px 5px 5px;
     font-size: 1.5em; }
-  /* line 120, ../scss/layout/_containers.scss */
+  /* line 174, ../scss/layout/_containers.scss */
   #dashboard-header div {
     width: 100%;
     background-color: #ededed;
@@ -683,13 +745,13 @@ canvas {
     border-left: solid #4d4d4d 0.5px;
     text-align: end;
     border-radius: 2px; }
-  /* line 128, ../scss/layout/_containers.scss */
+  /* line 182, ../scss/layout/_containers.scss */
   #dashboard-header input {
     border-radius: 3px;
     border: solid 1px #4d4d4d;
-    margin: 5px 10px 5px 5px;
+    margin: 5px 1em 5px 5px;
     padding: 2px 3px; }
-    /* line 133, ../scss/layout/_containers.scss */
+    /* line 187, ../scss/layout/_containers.scss */
     #dashboard-header input placeholder {
       padding-left: 2px;
       text-transform: capitalize; }
