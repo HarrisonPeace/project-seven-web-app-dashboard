@@ -348,7 +348,7 @@ template {
 
 /* line 11, ../scss/base/_base.scss */
 html {
-  min-width: 360px; }
+  min-width: 320px; }
 
 /* line 15, ../scss/base/_base.scss */
 body {
@@ -401,18 +401,97 @@ p {
 /* line 49, ../scss/base/_typography.scss */
 p,
 placeholder
-#social stats span {
+#social stats span,
+select {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300; }
 
-/* line 56, ../scss/base/_typography.scss */
+/* line 57, ../scss/base/_typography.scss */
 header p {
   letter-spacing: .2px; }
+
+/* line 61, ../scss/base/_typography.scss */
+.dashboard-heading {
+  margin-left: 7px; }
+
+/* line 65, ../scss/base/_typography.scss */
+p {
+  font-size: .8em; }
 
 /* Scss Document */
 /* ============================================= */
 /*              Grid System                      */
 /* ============================================= */
+/* --------------------------------------------
+				Main Body Grid
+-----------------------------------------------*/
+/* line 11, ../scss/component/_grid.scss */
+body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 65px 1fr;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: "header header" "main main"; }
+  @media (min-width: 768px) {
+    /* line 11, ../scss/component/_grid.scss */
+    body {
+      grid-template-areas: "header header" "nav main"; } }
+
+/* line 26, ../scss/component/_grid.scss */
+header {
+  grid-area: header; }
+
+/* line 30, ../scss/component/_grid.scss */
+main {
+  grid-area: main;
+  margin-bottom: 3em; }
+
+/* --------------------------------------------
+				Dashboard Main Content Grid
+-----------------------------------------------*/
+/* line 38, ../scss/component/_grid.scss */
+.main-content-container {
+  max-width: 1100px;
+  margin: auto; }
+  @media (min-width: 768px) {
+    /* line 38, ../scss/component/_grid.scss */
+    .main-content-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "trafficData trafficData" "dailyTrafficData mobiledata" "socialStats socialStats" "newMember recentActivity" "messageUsers dashboardSettings"; } }
+
+/* line 53, ../scss/component/_grid.scss */
+#traffic-data {
+  grid-area: trafficData; }
+
+/* line 57, ../scss/component/_grid.scss */
+#daily-traffic-data {
+  grid-area: dailyTrafficData; }
+
+/* line 61, ../scss/component/_grid.scss */
+#mobile-data {
+  grid-area: mobiledata; }
+
+/* line 65, ../scss/component/_grid.scss */
+#social-stats {
+  grid-area: socialStats; }
+
+/* line 69, ../scss/component/_grid.scss */
+#new-member-dashboard {
+  grid-area: newMember; }
+
+/* line 73, ../scss/component/_grid.scss */
+#recent-activity-dashbaord {
+  grid-area: recentActivity; }
+
+/* line 77, ../scss/component/_grid.scss */
+#message-users-form {
+  grid-area: messageUsers; }
+
+/* line 81, ../scss/component/_grid.scss */
+#dashboard-settings {
+  gridarea: dashboardSettings; }
+
 /* Scss Document */
 /* ============================================= */
 /*              Navigation                       */
@@ -473,28 +552,67 @@ nav {
 /* ============================================= */
 /*              Buttons                          */
 /* ============================================= */
+/* line 7, ../scss/component/_buttons.scss */
+button {
+  height: 2.5em;
+  margin-top: 7px;
+  font-size: 0.8em; }
+
+/* line 13, ../scss/component/_buttons.scss */
+.save-button {
+  margin-left: 7px;
+  margin-right: 7px; }
+
+/* line 18, ../scss/component/_buttons.scss */
+.cancel-button {
+  margin-right: 7px; }
+
 /* Scss Document */
 /* ============================================= */
 /*              Forms                            */
 /* ============================================= */
+/* line 7, ../scss/component/_forms.scss */
+#time-zone {
+  margin-top: 7px; }
+
 /* Scss Document */
 /* ============================================= */
 /*              Images                           */
 /* ============================================= */
 /* line 7, ../scss/component/_images.scss */
-#profile-picture {
+#profile-picture,
+.new-members img,
+.recent-activity img {
   border: hidden;
-  border-radius: 100%;
+  border-radius: 100%; }
+
+/* line 15, ../scss/component/_images.scss */
+#profile-picture {
   height: 75%;
   margin-right: 10px; }
+
+/* line 20, ../scss/component/_images.scss */
+.member-img,
+.arrow-icon {
+  margin-left: 7px;
+  height: 3em; }
+
+/* line 26, ../scss/component/_images.scss */
+.member-img {
+  height: 3em; }
+
+/* line 30, ../scss/component/_images.scss */
+.arrow-icon {
+  height: 1.5em;
+  margin-right: 7px; }
 
 /* CSS Document */
 /* line 3, ../scss/component/_switch.scss */
 .switch {
   position: relative;
   display: inline-block;
-  width: 90px;
-  height: 34px; }
+  width: 70px;
+  height: 24px; }
 
 /* line 10, ../scss/component/_switch.scss */
 .switch input {
@@ -519,8 +637,8 @@ nav {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 16px;
+  width: 16px;
   left: 4px;
   bottom: 4px;
   border-radius: 50%;
@@ -538,28 +656,31 @@ input:focus + .slider {
 
 /* line 50, ../scss/component/_switch.scss */
 input:checked + .slider:before {
-  -webkit-transform: translateX(56px);
-  -ms-transform: translateX(56px);
-  transform: translateX(56px); }
+  -webkit-transform: translateX(46px);
+  -ms-transform: translateX(46px);
+  transform: translateX(46px); }
 
 /* line 56, ../scss/component/_switch.scss */
 .switch-text {
   position: absolute;
-  top: 8px;
-  left: 17px;
+  top: 4px;
+  left: 10px;
   right: 0;
-  bottom: 0; }
+  bottom: 0;
+  font-size: .9em; }
 
-/* line 64, ../scss/component/_switch.scss */
+/* line 65, ../scss/component/_switch.scss */
 .switch-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-between; }
-  /* line 69, ../scss/component/_switch.scss */
+  justify-content: space-between;
+  margin-top: 7px; }
+  /* line 71, ../scss/component/_switch.scss */
   .switch-container .switch-heading {
-    margin-left: 0.5em; }
-  /* line 72, ../scss/component/_switch.scss */
+    margin-left: .5em;
+    width: 200px; }
+  /* line 75, ../scss/component/_switch.scss */
   .switch-container label {
     margin-right: 0.5em; }
 
@@ -568,63 +689,86 @@ input:checked + .slider:before {
 /* ============================================= */
 /*              Containers                       */
 /* ============================================= */
-/* line 6, ../scss/layout/_containers.scss */
-body {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 65px 1fr;
-  grid-template-rows: 50px 1fr;
-  grid-template-areas: "header header" "main main"; }
-  @media (min-width: 768px) {
-    /* line 6, ../scss/layout/_containers.scss */
-    body {
-      grid-template-areas: "header header" "nav main"; } }
-
-/* line 21, ../scss/layout/_containers.scss */
-header {
-  grid-area: header; }
-
-/* line 25, ../scss/layout/_containers.scss */
-main {
-  grid-area: main;
-  margin-bottom: 3em; }
-  /* line 28, ../scss/layout/_containers.scss */
-  main h2 {
-    margin-left: 7px; }
-
-/* line 33, ../scss/layout/_containers.scss */
-.main-content-area {
-  max-width: 1100px;
-  margin: auto; }
-
-/* line 38, ../scss/layout/_containers.scss */
-#traffic-data-heading {
-  display: flex;
-  justify-content: space-between; }
-  /* line 41, ../scss/layout/_containers.scss */
-  #traffic-data-heading div {
-    display: flex;
-    justify-content: space-around;
-    margin-right: 1em; }
-  /* line 46, ../scss/layout/_containers.scss */
-  #traffic-data-heading h3 {
-    margin-left: 7px; }
-
-/* line 52, ../scss/layout/_containers.scss */
+/* line 7, ../scss/layout/_containers.scss */
 canvas {
   width: 100%;
   background-color: #7477bf; }
 
-/* line 57, ../scss/layout/_containers.scss */
+/* --------------------------------------------
+				Dashboard Header
+-----------------------------------------------*/
+/* line 14, ../scss/layout/_containers.scss */
+#dashboard-header {
+  display: flex;
+  justify-content: space-between; }
+  /* line 17, ../scss/layout/_containers.scss */
+  #dashboard-header h1 {
+    display: inline-block;
+    padding: 0 2px;
+    margin: 5px 5px 5px 5px;
+    font-size: 1.5em; }
+  /* line 23, ../scss/layout/_containers.scss */
+  #dashboard-header div {
+    width: 100%;
+    background-color: #ededed;
+    border-bottom: solid #4d4d4d 0.5px;
+    border-left: solid #4d4d4d 0.5px;
+    text-align: end;
+    border-radius: 2px; }
+  /* line 31, ../scss/layout/_containers.scss */
+  #dashboard-header input {
+    border-radius: 3px;
+    border: solid 1px #4d4d4d;
+    margin: 5px;
+    padding: 2px 3px;
+    width: 94%; }
+    @media (min-width: 350px) {
+      /* line 31, ../scss/layout/_containers.scss */
+      #dashboard-header input {
+        width: 202px;
+        margin: 5px 1em 5px 5px; } }
+    /* line 41, ../scss/layout/_containers.scss */
+    #dashboard-header input placeholder {
+      padding-left: 2px;
+      text-transform: capitalize; }
+
+/* --------------------------------------------
+				Traffic Container
+-----------------------------------------------*/
+/* line 53, ../scss/layout/_containers.scss */
+#traffic-data-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 0; }
+  /* line 58, ../scss/layout/_containers.scss */
+  #traffic-data-heading div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 1em; }
+  /* line 64, ../scss/layout/_containers.scss */
+  #traffic-data-heading h3 {
+    margin-left: 7px;
+    font-size: 1em;
+    margin: 0 7px; }
+  /* line 69, ../scss/layout/_containers.scss */
+  #traffic-data-heading h2 {
+    margin: 0 7px; }
+
+/* --------------------------------------------
+				Social Stats
+-----------------------------------------------*/
+/* line 78, ../scss/layout/_containers.scss */
 #social-stats {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; }
-  /* line 61, ../scss/layout/_containers.scss */
+  /* line 82, ../scss/layout/_containers.scss */
   #social-stats h2 {
     flex-basis: 100%; }
 
-/* line 66, ../scss/layout/_containers.scss */
+/* line 87, ../scss/layout/_containers.scss */
 .social-stats-container {
   width: 80%;
   height: 70px;
@@ -636,10 +780,10 @@ canvas {
   display: flex;
   align-items: center; }
   @media (min-width: 485px) {
-    /* line 66, ../scss/layout/_containers.scss */
+    /* line 87, ../scss/layout/_containers.scss */
     .social-stats-container {
-      width: 30%; } }
-  /* line 79, ../scss/layout/_containers.scss */
+      width: 32%; } }
+  /* line 100, ../scss/layout/_containers.scss */
   .social-stats-container > div {
     margin: auto;
     width: 100%;
@@ -647,114 +791,113 @@ canvas {
     align-items: center;
     justify-content: space-between; }
     @media (min-width: 485px) {
-      /* line 79, ../scss/layout/_containers.scss */
+      /* line 100, ../scss/layout/_containers.scss */
       .social-stats-container > div {
         width: 170px;
         display: block; } }
-  /* line 90, ../scss/layout/_containers.scss */
-  .social-stats-container .social-icon {
-    background-color: #7477bf;
-    border-radius: 50%;
-    width: 3em;
-    height: 3em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    float: left; }
-    @media (min-width: 485px) {
-      /* line 90, ../scss/layout/_containers.scss */
-      .social-stats-container .social-icon {
-        display: none; } }
-    @media (min-width: 650px) {
-      /* line 90, ../scss/layout/_containers.scss */
-      .social-stats-container .social-icon {
-        display: flex; } }
-    /* line 105, ../scss/layout/_containers.scss */
-    .social-stats-container .social-icon img {
-      width: 60%;
-      color: #fff; }
-  /* line 110, ../scss/layout/_containers.scss */
-  .social-stats-container .social-number {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 100;
-    padding-left: 10px;
-    font-size: 2em; }
-  /* line 116, ../scss/layout/_containers.scss */
-  .social-stats-container .social-heading {
-    color: #7477bf;
-    font-weight: 600;
-    padding-left: 10px;
-    display: inline-block; }
-    @media (min-width: 485px) {
-      /* line 116, ../scss/layout/_containers.scss */
-      .social-stats-container .social-heading {
-        width: calc(100% - 48px); } }
 
-/* line 127, ../scss/layout/_containers.scss */
+/* line 113, ../scss/layout/_containers.scss */
+.social-icon {
+  background-color: #7477bf;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left; }
+  @media (min-width: 485px) {
+    /* line 113, ../scss/layout/_containers.scss */
+    .social-icon {
+      display: none; } }
+  @media (min-width: 650px) {
+    /* line 113, ../scss/layout/_containers.scss */
+    .social-icon {
+      display: flex; } }
+  /* line 128, ../scss/layout/_containers.scss */
+  .social-icon img {
+    width: 60%;
+    color: #fff; }
+
+/* line 133, ../scss/layout/_containers.scss */
+.social-number {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 100;
+  padding-left: 10px;
+  font-size: 2em; }
+
+/* line 139, ../scss/layout/_containers.scss */
+.social-heading {
+  color: #7477bf;
+  font-weight: 600;
+  padding-left: 10px;
+  display: inline-block; }
+  @media (min-width: 485px) {
+    /* line 139, ../scss/layout/_containers.scss */
+    .social-heading {
+      width: calc(100% - 48px); } }
+
+/* --------------------------------------------
+				New Members + Recent Activity
+-----------------------------------------------*/
+/* line 153, ../scss/layout/_containers.scss */
 .contact-info {
-  width: 80%; }
+  width: 80%;
+  display: flex;
+  justify-content: left;
+  align-items: center; }
 
-/* line 131, ../scss/layout/_containers.scss */
+/* line 160, ../scss/layout/_containers.scss */
 .new-members,
 .recent-activity {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
-  /* line 137, ../scss/layout/_containers.scss */
-  .new-members img,
-  .recent-activity img {
-    float: left;
-    clear: both; }
+  align-items: center;
+  margin: 3.5px 0; }
+  /* line 167, ../scss/layout/_containers.scss */
+  .new-members p,
+  .recent-activity p {
+    margin: 0 7px; }
 
-/* line 143, ../scss/layout/_containers.scss */
+/* line 172, ../scss/layout/_containers.scss */
 .recent-activity-icon {
   width: 1em;
   height: 1em; }
 
-/* line 148, ../scss/layout/_containers.scss */
+/* --------------------------------------------
+				Message Users Form
+-----------------------------------------------*/
+/* line 181, ../scss/layout/_containers.scss */
 #message-users-form form {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin: 0 7px; }
+  /* line 186, ../scss/layout/_containers.scss */
+  #message-users-form form input {
+    height: 2em; }
+  /* line 189, ../scss/layout/_containers.scss */
+  #message-users-form form textarea {
+    height: 6em;
+    margin-top: 7px; }
 
-/* line 155, ../scss/layout/_containers.scss */
+/* line 195, ../scss/layout/_containers.scss */
+textarea {
+  resize: none; }
+
+/* --------------------------------------------
+				Dashboard Settings
+-----------------------------------------------*/
+/* line 204, ../scss/layout/_containers.scss */
 #dashboard-settings button {
-  Width: 49%; }
-/* line 158, ../scss/layout/_containers.scss */
+  Width: calc(50% - 13px); }
+/* line 207, ../scss/layout/_containers.scss */
 #dashboard-settings select {
   width: 90%;
-  margin: auto;
-  display: block; }
-
-/* line 165, ../scss/layout/_containers.scss */
-#dashboard-header {
-  display: flex;
-  justify-content: space-between; }
-  /* line 168, ../scss/layout/_containers.scss */
-  #dashboard-header h1 {
-    display: inline-block;
-    padding: 0 2px;
-    margin: 5px 5px 5px 5px;
-    font-size: 1.5em; }
-  /* line 174, ../scss/layout/_containers.scss */
-  #dashboard-header div {
-    width: 100%;
-    background-color: #ededed;
-    border-bottom: solid #4d4d4d 0.5px;
-    border-left: solid #4d4d4d 0.5px;
-    text-align: end;
-    border-radius: 2px; }
-  /* line 182, ../scss/layout/_containers.scss */
-  #dashboard-header input {
-    border-radius: 3px;
-    border: solid 1px #4d4d4d;
-    margin: 5px 1em 5px 5px;
-    padding: 2px 3px; }
-    /* line 187, ../scss/layout/_containers.scss */
-    #dashboard-header input placeholder {
-      padding-left: 2px;
-      text-transform: capitalize; }
+  margin: 7px;
+  display: block;
+  width: calc(100% - 14px); }
 
 /* Scss Document */
 /* ============================================= */
@@ -782,38 +925,43 @@ canvas {
   margin-right: 10px; }
   /* line 22, ../scss/layout/_header.scss */
   #header-icons p {
-    color: #fff; }
+    color: #fff;
+    width: 3em; }
+    @media (min-width: 350px) {
+      /* line 22, ../scss/layout/_header.scss */
+      #header-icons p {
+        width: auto; } }
 
-/* line 27, ../scss/layout/_header.scss */
+/* line 31, ../scss/layout/_header.scss */
 #seperator {
   border: #4d4c72 0.1px solid;
   height: 80%;
   width: .1px;
   margin: 0 10px; }
 
-/* line 34, ../scss/layout/_header.scss */
+/* line 38, ../scss/layout/_header.scss */
 #logo {
   position: relative;
   width: 50%;
   display: flex;
   margin-left: 10px; }
 
-/* line 42, ../scss/layout/_header.scss */
+/* line 46, ../scss/layout/_header.scss */
 #logo > * {
   margin-top: auto;
   margin-bottom: auto; }
 
-/* line 47, ../scss/layout/_header.scss */
+/* line 51, ../scss/layout/_header.scss */
 #side-menu-button {
   height: 45%;
   display: inline-block;
   margin-right: 10px; }
   @media (min-width: 768px) {
-    /* line 47, ../scss/layout/_header.scss */
+    /* line 51, ../scss/layout/_header.scss */
     #side-menu-button {
       display: none; } }
 
-/* line 56, ../scss/layout/_header.scss */
+/* line 60, ../scss/layout/_header.scss */
 #notification-alert {
   border-radius: 50%;
   width: 6px;
@@ -823,13 +971,13 @@ canvas {
   right: 0px;
   top: -5px; }
 
-/* line 66, ../scss/layout/_header.scss */
+/* line 70, ../scss/layout/_header.scss */
 #notification {
   height: 50%;
   width: 23px;
   position: relative; }
 
-/* line 72, ../scss/layout/_header.scss */
+/* line 76, ../scss/layout/_header.scss */
 #notification-icon {
   width: 100%; }
 

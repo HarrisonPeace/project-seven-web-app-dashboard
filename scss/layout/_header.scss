@@ -21,6 +21,10 @@
 	margin-right: 10px;
 	p {
 		color: $font-color-light;
+		width: 3em;
+		@include mq(iphone5) {
+		width: auto;
+		}
 	}
 }
 
