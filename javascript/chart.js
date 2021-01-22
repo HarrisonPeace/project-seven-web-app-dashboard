@@ -3,14 +3,46 @@
 
 Chart.defaults.global.defaultFontColor = '#4d4d4d';
 Chart.defaults.global.defaultFontFamily = "'Nunito Sans', sans-serif";
+
 /* --------------------------------------------
 				Traffic Chart
 -----------------------------------------------*/
-var trafficChart = document.getElementById('traffic-chart').getContext('2d');
-var myChart = new Chart(trafficChart, {
+let trafficDataHourly = [87, 11, 7, 10, 8, 80, 100, 98, 70, 50, 30, 50];
+let trafficDataHourlyLabels = ['10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th', '21st'];
+let trafficDataDaily = [523, 721, 1101, 730, 834, 723, 1267];
+let trafficDataDailyLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+let trafficDataWeekly = [3723, 2921, 4501, 4230, 3344, 1234, 3267];
+let trafficDataWeeklyLabels = ['1st-7th', '8th-14th', '15th-21st', '22nd-28th', '29th-5th'];
+let trafficDataMonthly = [13723, 12921, 14501, 14230, 9344, 11234, 13267, 15784, 12893, 8912, 13487, 15694];
+let trafficDataMonthlyLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+let trafficHourly = document.getElementById('traffic-hourly');
+let trafficDaily = document.getElementById('traffic-daily');
+let trafficWeekly = document.getElementById('traffic-weekly');
+let trafficMonthly = document.getElementById('traffic-monthly');
+let trafficButtons = document.getElementsByClassName('traffic-buttons')
+
+trafficHourly.addEventListener('click', function () {updateTrafficChart(trafficDataHourlyLabels, trafficDataHourly, trafficHourly)}, false);
+trafficDaily.addEventListener('click', function () {updateTrafficChart(trafficDataDailyLabels, trafficDataDaily, trafficDaily)}, false);
+trafficWeekly.addEventListener('click', function () {updateTrafficChart(trafficDataWeeklyLabels, trafficDataWeekly, trafficWeekly)}, false);
+trafficMonthly.addEventListener('click', function () {updateTrafficChart(trafficDataMonthlyLabels, trafficDataMonthly, trafficMonthly)}, false);
+
+function updateTrafficChart (trafficLables, trafficData, dataFormat) {
+	trafficChart.data.labels = trafficLables;
+	trafficChart.config.data.datasets[0].data = trafficData
+	trafficChart.update();
+	let i;
+	for (i = 0; i < trafficButtons.length; i++) {
+		trafficButtons[i].classList.remove('traffic-button-focus');
+	}
+	dataFormat.className = "traffic-buttons traffic-button-focus";
+}
+let trafficChartCanvas = document.getElementById('traffic-chart').getContext('2d');
+let trafficChart = new Chart(trafficChartCanvas, {
+	maintainAspectRatio: 0,
     type: 'line',
     data: {
-        labels: ['1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12pm'],
+        labels: trafficDataHourlyLabels,
         datasets: [{
 			label: 'Visitors',
 			backgroundColor: 'rgb(116, 119, 191, 0.2)',
@@ -23,7 +55,7 @@ var myChart = new Chart(trafficChart, {
 			pointBorderWidth: '1.5',
 			pointRadius: '5',
 			lineTension: '0',
-            data: [123, 87, 11, 7, 10, 8, 80, 100, 98, 70, 50, 120, 150, 30, 50, 60, 80, 25, 30, 20, 40, 50, 70, 98],
+            data: trafficDataHourly,
         }],
 		
     },
@@ -46,15 +78,25 @@ var myChart = new Chart(trafficChart, {
 			displayColors: false,
 			borderColor: '#7477bf',
 			borderWidth: 1,
-		}
+		},
+		scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
     },
 });
+
+
+
 
 /* --------------------------------------------
 				Daily Traffic Chart
 -----------------------------------------------*/
-var dailyTrafficChart = document.getElementById('daily-traffic-chart').getContext('2d');
-var myChart = new Chart(dailyTrafficChart, {
+var dailyTrafficChartCanvas = document.getElementById('daily-traffic-chart').getContext('2d');
+var dailyTrafficChart = new Chart(dailyTrafficChartCanvas, {
     type: 'bar',
     data: {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -109,8 +151,8 @@ var myChart = new Chart(dailyTrafficChart, {
 /* --------------------------------------------
 				Mobile Users Chart
 -----------------------------------------------*/
-var mobileUsers = document.getElementById('mobile-users-chart').getContext('2d');
-var myChart = new Chart(mobileUsers, {
+var mobileUsersCanvas = document.getElementById('mobile-users-chart').getContext('2d');
+var mobileUsers = new Chart(mobileUsersCanvas, {
     type: 'doughnut',
     data: {
         labels: ['Phones', 'Tablets', 'Desktop'],

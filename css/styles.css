@@ -848,7 +848,7 @@ canvas {
     padding: 5px 10px; }
 
 /* line 83, ../scss/layout/_containers.scss */
-#traffic-hourly {
+.traffic-button-focus {
   color: #fff;
   background-color: #81c98f;
   border-radius: 20px; }
