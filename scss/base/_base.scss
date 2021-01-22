@@ -15,3 +15,14 @@ html {
 body {
 	width: 100%;
 }
+
+a {
+	color: $secondary-color;
+	text-decoration: none;
+	font-weight: 500;
+	transition: font-size .4s;
+	font-size: 0.9em;
+	&:click {
+		color: $primary-color;
+	}
+}

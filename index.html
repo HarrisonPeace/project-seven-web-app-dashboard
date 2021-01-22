@@ -18,7 +18,7 @@
 				<div id="notification-alert"></div>
 			</div>
 			<span id="seperator"></span>
-			<img src="images/member-1.jpg" alt="profile-picture" id="profile-picture">
+			<img src="images/member-2.jpg" alt="profile-picture" id="profile-picture">
 			<p>Josh Sullivan</p>
 		</div>
 	</header>
@@ -52,10 +52,10 @@
 				<div id="traffic-data-heading">
 					<h2 class="dashboard-heading">Traffic</h2>
 					<div>
-						<h3>Hourly</h3>
-						<h3>Daily</h3>
-						<h3>Weekly</h3>
-						<h3>Monthly</h3>
+						<h3 id="traffic-hourly">Hourly</h3>
+						<h3 id="traffic-daily">Daily</h3>
+						<h3 id="traffic-weekly">Weekly</h3>
+						<h3 id="traffic-monthly">Monthly</h3>
 					</div>
 				</div>
 				<canvas id="traffic-chart"></canvas>
@@ -111,7 +111,7 @@
 				</div>
 				<div class="new-members">
 					<div class="contact-info">
-						<img class="member-img" src="images/member-1.jpg" alt="picture-of-new-member">
+						<img class="member-img" src="images/member-2.jpg" alt="picture-of-new-member">
 						<div>
 							<p>Dale Byrd<br><a href="mailto:dale.byrd@yourapp.com">dale.byrd@yourapp.com</a></p>
 						</div>
@@ -120,7 +120,7 @@
 				</div>
 				<div class="new-members">
 					<div class="contact-info">
-						<img class="member-img" src="images/member-1.jpg" alt="picture-of-new-member">
+						<img class="member-img" src="images/member-3.jpg" alt="picture-of-new-member">
 						<div>
 							<p>Dawn Wood<br><a href="mailto:dawn.wood@yourapp.com">dawn.wood@yourapp.com</a></p>
 						</div>
@@ -129,7 +129,7 @@
 				</div>
 				<div class="new-members">
 					<div class="contact-info">
-						<img class="member-img" src="images/member-1.jpg" alt="picture-of-new-member">
+						<img class="member-img" src="images/member-4.jpg" alt="picture-of-new-member">
 						<div>
 							<p>Dan Oliver<br><a href="mailto:dan.oliver@yourapp.com">dan.oliver@yourapp.com</a></p>
 						</div>
@@ -142,28 +142,28 @@
 				<div class="recent-activity">
 					<div class="contact-info">
 						<img class="member-img" src="images/member-1.jpg" alt="picture-of-new-member">
-						<p>Victoria Chambers commented on YourApp's SEo Tips<br>4 hours ago</p>
+						<p>Victoria Chambers commented on YourApp's SEO Tips<br><span>4 hours ago</span></p>
 					</div>
 					<img class="arrow-icon" src="icons/right-arrow.svg" alt="arrow-icon">
 				</div>
 				<div class="recent-activity">
 					<div class="contact-info">
-						<img class="member-img" src="images/member-1.jpg" alt="picture-of-new-member">
-						<p>Dale Byrd liked "Facebook's Changes For 2016"<br>5 hours ago</p>
-					</div>
-					<img class="arrow-icon"src="icons/right-arrow.svg" alt="arrow-icon">
-				</div>
-				<div class="recent-activity">
-					<div class="contact-info">
-						<img class="member-img" src="images/member-1.jpg" alt="picture-of-new-member">
-						<p>Dawn Wood commented on "Facebook's Changes For 2016"<br>5 hours ago</p>
+						<img class="member-img" src="images/member-2.jpg" alt="picture-of-new-member">
+						<p>Dale Byrd liked "Facebook's Changes For 2016"<br><span>5 hours ago</span></p>
 					</div>
 					<img class="arrow-icon" src="icons/right-arrow.svg" alt="arrow-icon">
 				</div>
 				<div class="recent-activity">
 					<div class="contact-info">
-						<img class="member-img" src="images/member-1.jpg" alt="picture-of-new-member">
-						<p>Dan Oliver posted "YourApp's SEO Tips"<br>1 day ago</p>
+						<img class="member-img" src="images/member-3.jpg" alt="picture-of-new-member">
+						<p>Dawn Wood commented on "Facebook's Changes For 2016"<br><span>5 hours ago</span></p>
+					</div>
+					<img class="arrow-icon" src="icons/right-arrow.svg" alt="arrow-icon">
+				</div>
+				<div class="recent-activity">
+					<div class="contact-info">
+						<img class="member-img" src="images/member-4.jpg" alt="picture-of-new-member">
+						<p>Dan Oliver posted "YourApp's SEO Tips"<br><span>1 day ago</span></p>
 					</div>
 					<img class="arrow-icon" src="icons/right-arrow.svg" alt="arrow-icon">
 				</div>
@@ -173,7 +173,7 @@
 				<form>
 					<input type="search" id="user-search" placeholder="Search For User">
 					<textarea required></textarea>
-					<button type="submit">Send</button>
+					<button class="send-save-button" type="submit">Send</button>
 				</form>
 			</section>
 			<section id="dashboard-settings">
@@ -202,11 +202,13 @@
 						<option value="a-c-s-t">Australian Central Standard Time (ACST)</option>
 						<option value="a-w-s-t">Australian Western Standard Time (AWST)</option>
 					</select>
-					<button class="save-button" type="submit">Save</button>
+					<button class="send-save-button" type="submit">Save</button>
 					<button class="cancel-button" type="button">Cancel</button>
 				</form>
 			</section>
 		</section>
 	</main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+	<script src="javascript/chart.js"></script>
 </body>
 </html>

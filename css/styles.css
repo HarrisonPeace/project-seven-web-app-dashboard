@@ -354,6 +354,17 @@ html {
 body {
   width: 100%; }
 
+/* line 19, ../scss/base/_base.scss */
+a {
+  color: #4d4c72;
+  text-decoration: none;
+  font-weight: 500;
+  transition: font-size .4s;
+  font-size: 0.9em; }
+  /* line 25, ../scss/base/_base.scss */
+  a:click {
+    color: #7477bf; }
+
 /* ============================================= */
 /*              Typography                       */
 /* ============================================= */
@@ -366,7 +377,7 @@ h5,
 h6,
 span {
   font-family: 'Roboto', sans-serif;
-  font-weight: 400; }
+  font-weight: 300; }
 
 /* line 19, ../scss/base/_typography.scss */
 h1,
@@ -375,48 +386,63 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+span,
+select {
   color: #4d4d4d; }
 
-/* line 29, ../scss/base/_typography.scss */
+/* line 31, ../scss/base/_typography.scss */
 #logo-app {
   font-weight: 100;
   font-size: 1.6em;
-  display: inline-block; }
+  display: inline-block;
+  color: #fff; }
 
-/* line 35, ../scss/base/_typography.scss */
+/* line 38, ../scss/base/_typography.scss */
 #logo-your {
   font-weight: 900;
   font-size: 1.6em;
   display: inline-block;
-  position: relative; }
+  position: relative;
+  color: #fff; }
 
-/* line 42, ../scss/base/_typography.scss */
+/* line 46, ../scss/base/_typography.scss */
 #logo-tm {
   font-weight: 300;
   font-size: .4em;
   padding-bottom: 60%;
-  position: absolute; }
+  position: absolute;
+  color: #fff; }
 
-/* line 49, ../scss/base/_typography.scss */
+/* line 54, ../scss/base/_typography.scss */
 p,
 placeholder
-#social stats span,
-select {
+#social-stats span,
+select,
+input,
+button {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300; }
 
-/* line 57, ../scss/base/_typography.scss */
+/* line 64, ../scss/base/_typography.scss */
+placeholder {
+  font-size: .8em; }
+
+/* line 68, ../scss/base/_typography.scss */
 header p {
   letter-spacing: .2px; }
 
-/* line 61, ../scss/base/_typography.scss */
+/* line 72, ../scss/base/_typography.scss */
 .dashboard-heading {
   margin-left: 7px; }
 
-/* line 65, ../scss/base/_typography.scss */
+/* line 76, ../scss/base/_typography.scss */
 p {
-  font-size: .8em; }
+  font-size: .75em; }
+
+/* line 80, ../scss/base/_typography.scss */
+form {
+  font-size: .85em; }
 
 /* Scss Document */
 /* ============================================= */
@@ -449,46 +475,46 @@ main {
 /* --------------------------------------------
 				Dashboard Main Content Grid
 -----------------------------------------------*/
-/* line 38, ../scss/component/_grid.scss */
+/* line 39, ../scss/component/_grid.scss */
 .main-content-container {
   max-width: 1100px;
   margin: auto; }
   @media (min-width: 768px) {
-    /* line 38, ../scss/component/_grid.scss */
+    /* line 39, ../scss/component/_grid.scss */
     .main-content-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-areas: "trafficData trafficData" "dailyTrafficData mobiledata" "socialStats socialStats" "newMember recentActivity" "messageUsers dashboardSettings"; } }
 
-/* line 53, ../scss/component/_grid.scss */
+/* line 54, ../scss/component/_grid.scss */
 #traffic-data {
   grid-area: trafficData; }
 
-/* line 57, ../scss/component/_grid.scss */
+/* line 58, ../scss/component/_grid.scss */
 #daily-traffic-data {
   grid-area: dailyTrafficData; }
 
-/* line 61, ../scss/component/_grid.scss */
+/* line 62, ../scss/component/_grid.scss */
 #mobile-data {
   grid-area: mobiledata; }
 
-/* line 65, ../scss/component/_grid.scss */
+/* line 66, ../scss/component/_grid.scss */
 #social-stats {
   grid-area: socialStats; }
 
-/* line 69, ../scss/component/_grid.scss */
+/* line 70, ../scss/component/_grid.scss */
 #new-member-dashboard {
   grid-area: newMember; }
 
-/* line 73, ../scss/component/_grid.scss */
+/* line 74, ../scss/component/_grid.scss */
 #recent-activity-dashbaord {
   grid-area: recentActivity; }
 
-/* line 77, ../scss/component/_grid.scss */
+/* line 78, ../scss/component/_grid.scss */
 #message-users-form {
   grid-area: messageUsers; }
 
-/* line 81, ../scss/component/_grid.scss */
+/* line 82, ../scss/component/_grid.scss */
 #dashboard-settings {
   gridarea: dashboardSettings; }
 
@@ -511,25 +537,26 @@ nav {
     nav {
       display: block;
       position: inherit;
-      padding: 0; } }
-  /* line 21, ../scss/component/_navigation.scss */
+      padding: 0;
+      border-radius: 0 0 0 0; } }
+  /* line 22, ../scss/component/_navigation.scss */
   nav img {
     width: 40px;
     display: inline; }
     @media (min-width: 768px) {
-      /* line 21, ../scss/component/_navigation.scss */
+      /* line 22, ../scss/component/_navigation.scss */
       nav img {
         width: 70%; } }
-  /* line 28, ../scss/component/_navigation.scss */
+  /* line 29, ../scss/component/_navigation.scss */
   nav h3 {
     margin: 0;
     font-size: .8em;
     display: inline; }
     @media (min-width: 768px) {
-      /* line 28, ../scss/component/_navigation.scss */
+      /* line 29, ../scss/component/_navigation.scss */
       nav h3 {
         display: none; } }
-  /* line 36, ../scss/component/_navigation.scss */
+  /* line 37, ../scss/component/_navigation.scss */
   nav div {
     display: flex;
     justify-content: space-around;
@@ -540,11 +567,11 @@ nav {
     border-radius: 0 10px 10px 0;
     width: 200px; }
     @media (min-width: 768px) {
-      /* line 36, ../scss/component/_navigation.scss */
+      /* line 37, ../scss/component/_navigation.scss */
       nav div {
         width: 100%;
         margin: 13px auto; } }
-  /* line 50, ../scss/component/_navigation.scss */
+  /* line 51, ../scss/component/_navigation.scss */
   nav .nav-selected {
     border-left: solid 2.5px #75f56e; }
 
@@ -556,16 +583,26 @@ nav {
 button {
   height: 2.5em;
   margin-top: 7px;
-  font-size: 0.8em; }
-
-/* line 13, ../scss/component/_buttons.scss */
-.save-button {
-  margin-left: 7px;
-  margin-right: 7px; }
+  font-size: 0.8em;
+  border-radius: 5px;
+  font-weight: 400;
+  height: 3em;
+  color: #fff;
+  text-transform: uppercase; }
 
 /* line 18, ../scss/component/_buttons.scss */
+.send-save-button {
+  background-color: #7477bf;
+  border: solid 1px #7477bf; }
+
+/* line 24, ../scss/component/_buttons.scss */
 .cancel-button {
-  margin-right: 7px; }
+  background-color: #A3A3A3;
+  border: solid 1px #A3A3A3; }
+
+/* line 29, ../scss/component/_buttons.scss */
+#dashboard-settings form button:last-child {
+  margin-left: 7px; }
 
 /* Scss Document */
 /* ============================================= */
@@ -574,6 +611,51 @@ button {
 /* line 7, ../scss/component/_forms.scss */
 #time-zone {
   margin-top: 7px; }
+
+/* line 11, ../scss/component/_forms.scss */
+input,
+textarea,
+select {
+  border-radius: 3px;
+  border: solid 1px #E8E8E8; }
+
+/* line 18, ../scss/component/_forms.scss */
+form {
+  margin: 0 7px; }
+
+/* --------------------------------------------
+				Message Users Form
+-----------------------------------------------*/
+/* line 26, ../scss/component/_forms.scss */
+#message-users-form form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; }
+  /* line 30, ../scss/component/_forms.scss */
+  #message-users-form form input {
+    height: 2em; }
+  /* line 33, ../scss/component/_forms.scss */
+  #message-users-form form textarea {
+    height: 6em;
+    margin-top: 7px; }
+
+/* line 39, ../scss/component/_forms.scss */
+textarea {
+  resize: none; }
+
+/* --------------------------------------------
+				Dashboard Settings
+-----------------------------------------------*/
+/* line 48, ../scss/component/_forms.scss */
+#dashboard-settings button {
+  Width: calc(50% - 13px); }
+/* line 51, ../scss/component/_forms.scss */
+#dashboard-settings select {
+  width: 90%;
+  margin: 7px 0;
+  display: block;
+  width: calc(100% - 14px);
+  padding: 5px 3px; }
 
 /* Scss Document */
 /* ============================================= */
@@ -599,7 +681,7 @@ button {
 
 /* line 26, ../scss/component/_images.scss */
 .member-img {
-  height: 3em; }
+  height: 2.5em; }
 
 /* line 30, ../scss/component/_images.scss */
 .arrow-icon {
@@ -648,7 +730,7 @@ button {
 
 /* line 42, ../scss/component/_switch.scss */
 input:checked + .slider {
-  background-color: #2196F3; }
+  background-color: #7477bf; }
 
 /* line 46, ../scss/component/_switch.scss */
 input:focus + .slider {
@@ -667,18 +749,18 @@ input:checked + .slider:before {
   left: 10px;
   right: 0;
   bottom: 0;
-  font-size: .9em; }
+  font-size: .9em;
+  color: #fff; }
 
-/* line 65, ../scss/component/_switch.scss */
+/* line 66, ../scss/component/_switch.scss */
 .switch-container {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
   margin-top: 7px; }
-  /* line 71, ../scss/component/_switch.scss */
+  /* line 72, ../scss/component/_switch.scss */
   .switch-container .switch-heading {
-    margin-left: .5em;
     width: 200px; }
   /* line 75, ../scss/component/_switch.scss */
   .switch-container label {
@@ -691,99 +773,117 @@ input:checked + .slider:before {
 /* ============================================= */
 /* line 7, ../scss/layout/_containers.scss */
 canvas {
-  width: 100%;
-  background-color: #7477bf; }
+  width: 100%; }
+
+/* line 10, ../scss/layout/_containers.scss */
+main h2 {
+  margin-bottom: .5em;
+  font-size: 1.2em; }
+
+/* line 15, ../scss/layout/_containers.scss */
+canvas {
+  padding: 0 7px 10px; }
 
 /* --------------------------------------------
 				Dashboard Header
 -----------------------------------------------*/
-/* line 14, ../scss/layout/_containers.scss */
+/* line 22, ../scss/layout/_containers.scss */
 #dashboard-header {
   display: flex;
-  justify-content: space-between; }
-  /* line 17, ../scss/layout/_containers.scss */
+  justify-content: space-between;
+  align-items: center;
+  text-align: center; }
+  /* line 27, ../scss/layout/_containers.scss */
   #dashboard-header h1 {
     display: inline-block;
     padding: 0 2px;
     margin: 5px 5px 5px 5px;
-    font-size: 1.5em; }
-  /* line 23, ../scss/layout/_containers.scss */
+    font-size: 1.3em;
+    width: 140px; }
+  /* line 34, ../scss/layout/_containers.scss */
   #dashboard-header div {
     width: 100%;
-    background-color: #ededed;
-    border-bottom: solid #4d4d4d 0.5px;
-    border-left: solid #4d4d4d 0.5px;
+    background-color: #FDFDFD;
+    border-bottom: solid #E8E8E8 0.5px;
+    border-left: solid #E8E8E8 0.5px;
     text-align: end;
     border-radius: 2px; }
-  /* line 31, ../scss/layout/_containers.scss */
+  /* line 42, ../scss/layout/_containers.scss */
   #dashboard-header input {
     border-radius: 3px;
-    border: solid 1px #4d4d4d;
+    border: solid 1px #E8E8E8;
     margin: 5px;
-    padding: 2px 3px;
+    padding: 3px 4px;
     width: 94%; }
     @media (min-width: 350px) {
-      /* line 31, ../scss/layout/_containers.scss */
+      /* line 42, ../scss/layout/_containers.scss */
       #dashboard-header input {
         width: 202px;
         margin: 5px 1em 5px 5px; } }
-    /* line 41, ../scss/layout/_containers.scss */
+    /* line 52, ../scss/layout/_containers.scss */
     #dashboard-header input placeholder {
-      padding-left: 2px;
-      text-transform: capitalize; }
+      padding-left: 4px;
+      text-transform: capitalize;
+      font-size: .4em; }
 
 /* --------------------------------------------
 				Traffic Container
 -----------------------------------------------*/
-/* line 53, ../scss/layout/_containers.scss */
+/* line 65, ../scss/layout/_containers.scss */
 #traffic-data-heading {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin: 1em 0; }
-  /* line 58, ../scss/layout/_containers.scss */
+  align-items: center; }
+  /* line 69, ../scss/layout/_containers.scss */
   #traffic-data-heading div {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-right: 1em; }
-  /* line 64, ../scss/layout/_containers.scss */
+  /* line 75, ../scss/layout/_containers.scss */
   #traffic-data-heading h3 {
     margin-left: 7px;
     font-size: 1em;
-    margin: 0 7px; }
-  /* line 69, ../scss/layout/_containers.scss */
-  #traffic-data-heading h2 {
-    margin: 0 7px; }
+    margin: 0;
+    padding: 5px 10px; }
+
+/* line 83, ../scss/layout/_containers.scss */
+#traffic-hourly {
+  color: #fff;
+  background-color: #81c98f;
+  border-radius: 20px; }
 
 /* --------------------------------------------
 				Social Stats
 -----------------------------------------------*/
-/* line 78, ../scss/layout/_containers.scss */
+/* line 93, ../scss/layout/_containers.scss */
 #social-stats {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; }
-  /* line 82, ../scss/layout/_containers.scss */
+  justify-content: space-around;
+  padding-bottom: 1.8em;
+  border-bottom: solid #E8E8E8 0.5px; }
+  /* line 99, ../scss/layout/_containers.scss */
   #social-stats h2 {
     flex-basis: 100%; }
 
-/* line 87, ../scss/layout/_containers.scss */
+/* line 104, ../scss/layout/_containers.scss */
 .social-stats-container {
   width: 80%;
   height: 70px;
-  background-color: #ededed;
-  border: solid #4d4d4d 0.5px;
-  border-radius: 2px;
+  background-color: #FDFDFD;
+  border: solid #E8E8E8 0.5px;
+  border-radius: 5px;
   padding: 10px 20px;
-  margin-top: 10px;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 7px; }
   @media (min-width: 485px) {
-    /* line 87, ../scss/layout/_containers.scss */
+    /* line 104, ../scss/layout/_containers.scss */
     .social-stats-container {
-      width: 32%; } }
-  /* line 100, ../scss/layout/_containers.scss */
+      width: 32%;
+      margin: auto; } }
+  /* line 118, ../scss/layout/_containers.scss */
   .social-stats-container > div {
     margin: auto;
     width: 100%;
@@ -791,12 +891,12 @@ canvas {
     align-items: center;
     justify-content: space-between; }
     @media (min-width: 485px) {
-      /* line 100, ../scss/layout/_containers.scss */
+      /* line 118, ../scss/layout/_containers.scss */
       .social-stats-container > div {
         width: 170px;
         display: block; } }
 
-/* line 113, ../scss/layout/_containers.scss */
+/* line 131, ../scss/layout/_containers.scss */
 .social-icon {
   background-color: #7477bf;
   border-radius: 50%;
@@ -807,97 +907,111 @@ canvas {
   justify-content: center;
   float: left; }
   @media (min-width: 485px) {
-    /* line 113, ../scss/layout/_containers.scss */
+    /* line 131, ../scss/layout/_containers.scss */
     .social-icon {
       display: none; } }
   @media (min-width: 650px) {
-    /* line 113, ../scss/layout/_containers.scss */
+    /* line 131, ../scss/layout/_containers.scss */
     .social-icon {
       display: flex; } }
-  /* line 128, ../scss/layout/_containers.scss */
+  /* line 146, ../scss/layout/_containers.scss */
   .social-icon img {
     width: 60%;
     color: #fff; }
 
-/* line 133, ../scss/layout/_containers.scss */
+/* line 151, ../scss/layout/_containers.scss */
 .social-number {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 100;
   padding-left: 10px;
-  font-size: 2em; }
+  font-size: 1.8em;
+  color: #4d4d4d; }
 
-/* line 139, ../scss/layout/_containers.scss */
+/* line 158, ../scss/layout/_containers.scss */
 .social-heading {
   color: #7477bf;
   font-weight: 600;
   padding-left: 10px;
   display: inline-block; }
   @media (min-width: 485px) {
-    /* line 139, ../scss/layout/_containers.scss */
+    /* line 158, ../scss/layout/_containers.scss */
     .social-heading {
       width: calc(100% - 48px); } }
 
 /* --------------------------------------------
 				New Members + Recent Activity
 -----------------------------------------------*/
-/* line 153, ../scss/layout/_containers.scss */
+/* line 172, ../scss/layout/_containers.scss */
 .contact-info {
   width: 80%;
   display: flex;
   justify-content: left;
   align-items: center; }
 
-/* line 160, ../scss/layout/_containers.scss */
+/* line 179, ../scss/layout/_containers.scss */
 .new-members,
 .recent-activity {
-  width: 100%;
+  width: 96%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 3.5px 0; }
-  /* line 167, ../scss/layout/_containers.scss */
+  margin: auto;
+  padding: 3px 0 6px; }
+  /* line 187, ../scss/layout/_containers.scss */
+  .new-members:not(:last-child),
+  .recent-activity:not(:last-child) {
+    border-bottom: solid #E8E8E8 0.5px; }
+  /* line 190, ../scss/layout/_containers.scss */
   .new-members p,
   .recent-activity p {
     margin: 0 7px; }
+    /* line 192, ../scss/layout/_containers.scss */
+    .new-members p span,
+    .recent-activity p span {
+      font-size: 0.85em; }
 
-/* line 172, ../scss/layout/_containers.scss */
+/* line 198, ../scss/layout/_containers.scss */
 .recent-activity-icon {
   width: 1em;
   height: 1em; }
 
 /* --------------------------------------------
-				Message Users Form
------------------------------------------------*/
-/* line 181, ../scss/layout/_containers.scss */
-#message-users-form form {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 0 7px; }
-  /* line 186, ../scss/layout/_containers.scss */
-  #message-users-form form input {
-    height: 2em; }
-  /* line 189, ../scss/layout/_containers.scss */
-  #message-users-form form textarea {
-    height: 6em;
-    margin-top: 7px; }
-
-/* line 195, ../scss/layout/_containers.scss */
-textarea {
-  resize: none; }
-
-/* --------------------------------------------
 				Dashboard Settings
 -----------------------------------------------*/
-/* line 204, ../scss/layout/_containers.scss */
-#dashboard-settings button {
-  Width: calc(50% - 13px); }
 /* line 207, ../scss/layout/_containers.scss */
-#dashboard-settings select {
-  width: 90%;
-  margin: 7px;
-  display: block;
-  width: calc(100% - 14px); }
+#dashboard-settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left; }
+  /* line 212, ../scss/layout/_containers.scss */
+  #dashboard-settings form {
+    flex-grow: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end; }
+
+/* --------------------------------------------
+				Container Borders
+-----------------------------------------------*/
+@media (min-width: 768px) {
+  /* line 225, ../scss/layout/_containers.scss */
+  #new-member-dashboard,
+  #message-users-form,
+  #daily-traffic-data {
+    border-right: solid #E8E8E8 0.5px; } }
+
+/* line 233, ../scss/layout/_containers.scss */
+#new-member-dashboard,
+#recent-activity-dashbaord,
+#mobile-data,
+#daily-traffic-data {
+  border-bottom: solid #E8E8E8 0.5px; }
+
+/* line 240, ../scss/layout/_containers.scss */
+#mobile-data,
+#daily-traffic-data {
+  border-top: solid #E8E8E8 0.5px; }
 
 /* Scss Document */
 /* ============================================= */
@@ -934,9 +1048,9 @@ textarea {
 
 /* line 31, ../scss/layout/_header.scss */
 #seperator {
-  border: #4d4c72 0.1px solid;
-  height: 80%;
-  width: .1px;
+  border-left: #4d4c72 0.1px solid;
+  height: 75%;
+  width: 0;
   margin: 0 10px; }
 
 /* line 38, ../scss/layout/_header.scss */

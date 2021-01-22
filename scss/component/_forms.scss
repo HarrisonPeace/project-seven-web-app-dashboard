@@ -7,3 +7,52 @@
 #time-zone {
 	margin-top: 7px;
 }
+
+input,
+textarea,
+select {
+		border-radius: 3px;
+		border: solid 1px $border-color;
+}
+
+form {
+	margin: 0 7px;
+}
+
+/* --------------------------------------------
+				Message Users Form
+-----------------------------------------------*/
+
+#message-users-form form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	input {
+		height: 2em;
+	}
+	textarea {
+		height: 6em;
+		margin-top: 7px;
+	}
+}
+
+textarea {
+  resize: none;
+}
+
+/* --------------------------------------------
+				Dashboard Settings
+-----------------------------------------------*/
+
+#dashboard-settings {
+	button {
+		Width: calc(50% - 13px);
+	}
+	select {
+		width: 90%;
+		margin: 7px 0;
+		display: block;
+		width: calc(100% - 14px);
+		padding: 5px 3px;
+	}
+}

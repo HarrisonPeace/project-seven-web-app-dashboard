@@ -13,7 +13,7 @@ h5,
 h6,
 span{
 	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
+	font-weight: 300;
 }
 
 h1,
@@ -22,7 +22,9 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+span,
+select {
 	color: $font-color-dark;
 }
 
@@ -30,6 +32,7 @@ p {
 	font-weight: 100;
 	font-size: 1.6em;
 	display: inline-block;
+	color: $font-color-light;
 }
 
 #logo-your {
@@ -37,6 +40,7 @@ p {
 	font-size: 1.6em;
 	display: inline-block;
 	position: relative;
+	color: $font-color-light;
 }
 
 #logo-tm {
@@ -44,14 +48,21 @@ p {
 	font-size: .4em;
 	padding-bottom: 60%;
 	position: absolute;
+	color: $font-color-light;
 }
 
 p,
 placeholder
-#social stats span,
-select {
+#social-stats span,
+select,
+input,
+button {
 	font-family: 'Nunito Sans', sans-serif;
 	font-weight: 300;
+}
+
+placeholder {
+	font-size: .8em;
 }
 
 header p {
@@ -63,5 +74,9 @@ header p {
 }
 
 p {
-	font-size: .8em;
+	font-size: .75em;
+}
+
+form {
+	font-size: .85em;
 }
