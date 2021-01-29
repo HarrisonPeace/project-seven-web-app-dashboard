@@ -9,7 +9,7 @@
 <body>
 	<header id="main-backend-header">
 		<div id="logo">
-			<img src="icons/icon-menu.svg" alt="menu-icon" id="side-menu-button">
+			<img src="icons/icon-menu.svg" alt="menu-icon" id="side-nav-button">
 			<span id="logo-your"><i>Your</i></span><span id="logo-app">App<span id="logo-tm">TM</span></span>
 		</div>
 		<div id="header-icons">
@@ -23,29 +23,35 @@
 		</div>
 	</header>
 	<nav id="dashboard-side-navigation">
-		<div class="nav-selected">
-		<img src="icons/icon-dashboard.svg" alt="dashboard-icon">
-		<h3>Dashboard</h3>
+		<div class="nav-selected" id="dashboard-nav-button">
+			<img src="icons/icon-dashboard.svg" alt="dashboard-icon">
+			<h3>Dashboard</h3>
 		</div>
 		<div>
-		<img src="icons/icon-members.svg" alt="members-icon">
-		<h3>Members</h3>
+			<img src="icons/icon-members.svg" alt="members-icon">
+			<h3>Members</h3>
 		</div>
 		<div>
-		<img src="icons/icon-visits.svg" alt="visits-icon">
-		<h3>Visits</h3>
+			<img src="icons/icon-visits.svg" alt="visits-icon">
+			<h3>Visits</h3>
 		</div>
 		<div>
-		<img src="icons/icon-settings.svg" alt="settings-icon">
-		<h3>Settings</h3>
+			<img src="icons/icon-settings.svg" alt="settings-icon">
+			<h3>Settings</h3>
 		</div>
 	</nav>
+	<aside id="nav-screen-overlay">
+	</aside>
 	<main>
 		<section id="dashboard-header">
 			<h1>Dashboard</h1>
 			<div>
 				<input type="search" id="dashboard-search" placeholder="Search">
 			</div>
+		</section>
+		<section id="alert-container">
+			<h2><strong>Alert</strong> &nbsp; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h2>
+			<img src="icons/icon-x.png" alt="exit-alert-icon">
 		</section>
 		<section class="main-content-container">
 			<section id="traffic-data">
@@ -170,12 +176,18 @@
 					<img class="arrow-icon" src="icons/right-arrow.svg" alt="arrow-icon">
 				</div>
 			</section>
-			<section id="message-users-form">
+			<section id="message-users-form-container">
 				<h2 class="dashboard-heading">Message User</h2>
-				<form>
-					<input type="search" id="user-search" placeholder="Search For User">
-					<textarea required></textarea>
-					<button class="send-save-button" type="submit">Send</button>
+				<form id="message-users-form" method="post" action="">
+					<input type="search" id="user-search" placeholder="Search For User" required list="message-user-search-terms" autocomplete>
+					<datalist id="message-user-search-terms">
+   						<option value="Victoria Chambers">
+						<option value="Dale Byrd">
+						<option value="Dawn Wood">
+						<option value="Dan Oliver">
+					</datalist>
+					<textarea required id="user-search-textarea"></textarea>
+					<button form="message-users-form" class="send-save-button" value="submit" id="message-user-send-button" type="submit">Send</button>
 				</form>
 			</section>
 			<section id="dashboard-settings">
@@ -211,6 +223,7 @@
 		</section>
 	</main>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+	<script src="javascript/main.js"></script>
 	<script src="javascript/chart.js"></script>
 </body>
 </html>

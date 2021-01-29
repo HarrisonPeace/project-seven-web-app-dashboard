@@ -12,9 +12,11 @@ main h2 {
 	font-size: 1.2em;
 }
 
-canvas {
+#mobile-users-chart,
+#daily-traffic-chart {
 	padding: 0 7px 10px;
 }
+
 
 /* --------------------------------------------
 				Dashboard Header
@@ -59,6 +61,35 @@ canvas {
 }
 
 /* --------------------------------------------
+				Alert Container
+-----------------------------------------------*/
+#alert-container {
+	max-width: 1070px;
+	margin: 14px 7px 7px;
+	background-color: $primary-color;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include mq(max-content-width) {
+		margin: 14px auto 7px;
+	}
+	h2 {
+		color: $font-color-light;
+		margin: .6em 14px .6em 7px;
+		font-size: .8em;
+		@include mq(tablet) {
+		font-size: 1em
+		}
+	}
+	img {
+		height: 15px;
+		display: inline-block;
+		margin-right: 14px;
+	}
+}
+
+/* --------------------------------------------
 				Traffic Container
 -----------------------------------------------*/
 
@@ -84,6 +115,8 @@ canvas {
 	color: $white;
 	background-color: #81c98f;
 	border-radius: 20px;
+	transition: .5s ease-in;
+	padding: 5px 10px;
 }
 
 /* --------------------------------------------
@@ -223,7 +256,7 @@ canvas {
 -----------------------------------------------*/
 
 #new-member-dashboard,
-#message-users-form,
+#message-users-form-container,
 #daily-traffic-data {
 	@include mq(tablet) {
 		border-right: solid $border-color 0.5px;

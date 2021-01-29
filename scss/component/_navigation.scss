@@ -8,11 +8,12 @@ nav {
 	position: absolute;
 	background-color: $secondary-color;
 	color: $font-color-light;
-	padding: 10px 10px 10px 0;
+	padding: 5px 0;
 	top: 0px;
 	border-radius: 0 0 10px 0;
 	display: none;
 	grid-area: nav;
+	z-index: 20;
 	@include mq(tablet) {
 		display: block;
 		position: inherit;
@@ -20,38 +21,51 @@ nav {
 		border-radius: 0 0 0 0;
 	}
 	img {
-	width: 40px;
-	display: inline;
-	@include mq(tablet) {
-		width: 70%;
-	}
+		width: 30px;
+		display: inline;
+		@include mq(tablet) {
+			width: 70%;
+		}
 	}
 	h3 {
-	margin: 0;
-	font-size: .8em;
-	display: inline;
-	@include mq(tablet) {
-		display: none;
-	}
+		margin: 0;
+		font-size: .8em;
+		display: inline;
+		color: $font-color-light;
+		@include mq(tablet) {
+			display: none;
+		}
 	}
 	div {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	margin: 10px 10px 10px -2px;
-	padding: 10px;
-	border: 2px $secondary-color solid;
-	border-radius: 0 10px 10px 0;
-	width: 200px;
-	@include mq(tablet) {
-		width: 100%;
-		margin: 13px auto;
-	}
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin: 5px 0;
+		padding: 10px;
+		border: 2px $secondary-color solid;
+		border-radius: 0 10px 10px 0;
+		width: 150px;
+		@include mq(tablet) {
+			width: 100%;
+			margin: 13px auto;
+		}
 	}
 	.nav-selected {
-	border-left: solid 2.5px $alert-color;
+		border-left: solid 2.8px $alert-color;
+		transition: 0.2s ease-in;
+		@include mq(tablet) {
+			border-left-width: 4px;
+		}
 }
 }
 
+#nav-screen-overlay {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.41);
+	z-index: 10;
+	display: none;
+}
 
 

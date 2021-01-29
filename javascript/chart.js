@@ -1,6 +1,5 @@
 // JavaScript Document
 
-
 Chart.defaults.global.defaultFontColor = '#4d4d4d';
 Chart.defaults.global.defaultFontFamily = "'Nunito Sans', sans-serif";
 
@@ -8,11 +7,11 @@ Chart.defaults.global.defaultFontFamily = "'Nunito Sans', sans-serif";
 				Traffic Chart
 -----------------------------------------------*/
 let trafficDataHourly = [87, 11, 7, 10, 8, 80, 100, 98, 70, 50, 30, 50];
-let trafficDataHourlyLabels = ['10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th', '21st'];
-let trafficDataDaily = [523, 721, 1101, 730, 834, 723, 1267];
-let trafficDataDailyLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-let trafficDataWeekly = [3723, 2921, 4501, 4230, 3344, 1234, 3267];
-let trafficDataWeeklyLabels = ['1st-7th', '8th-14th', '15th-21st', '22nd-28th', '29th-5th'];
+let trafficDataHourlyLabels = ['1am', '3am', '5am', '7am', '9am', '11am', '1pm', '3pm', '5pm', '7pm', '9pm', '11pm'];
+let trafficDataDaily = [523, 721, 1101, 730, 834, 723, 1267, 476, 129, 894, 1123, 654];
+let trafficDataDailyLabels = ['10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th', '21st'];
+let trafficDataWeekly = [3723, 2921, 4501, 4230, 3344, 1234, 3267, 4213, 4521, 2134, 1456, 1235];
+let trafficDataWeeklyLabels = ['1st-7th', '8th-14th', '15th-21st', '22nd-28th', '29th-5th', '6th-12th', '13th-19th', '20th-26th', '27th-2nd', '3rd-9th', '10th-6th'];
 let trafficDataMonthly = [13723, 12921, 14501, 14230, 9344, 11234, 13267, 15784, 12893, 8912, 13487, 15694];
 let trafficDataMonthlyLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -22,10 +21,10 @@ let trafficWeekly = document.getElementById('traffic-weekly');
 let trafficMonthly = document.getElementById('traffic-monthly');
 let trafficButtons = document.getElementsByClassName('traffic-buttons')
 
-trafficHourly.addEventListener('click', function () {updateTrafficChart(trafficDataHourlyLabels, trafficDataHourly, trafficHourly)}, false);
-trafficDaily.addEventListener('click', function () {updateTrafficChart(trafficDataDailyLabels, trafficDataDaily, trafficDaily)}, false);
-trafficWeekly.addEventListener('click', function () {updateTrafficChart(trafficDataWeeklyLabels, trafficDataWeekly, trafficWeekly)}, false);
-trafficMonthly.addEventListener('click', function () {updateTrafficChart(trafficDataMonthlyLabels, trafficDataMonthly, trafficMonthly)}, false);
+trafficHourly.addEventListener('click', () => {updateTrafficChart(trafficDataHourlyLabels, trafficDataHourly, trafficHourly)}, false);
+trafficDaily.addEventListener('click', () => {updateTrafficChart(trafficDataDailyLabels, trafficDataDaily, trafficDaily)}, false);
+trafficWeekly.addEventListener('click', () => {updateTrafficChart(trafficDataWeeklyLabels, trafficDataWeekly, trafficWeekly)}, false);
+trafficMonthly.addEventListener('click', () => {updateTrafficChart(trafficDataMonthlyLabels, trafficDataMonthly, trafficMonthly)}, false);
 
 function updateTrafficChart (trafficLables, trafficData, dataFormat) {
 	trafficChart.data.labels = trafficLables;
@@ -82,15 +81,16 @@ let trafficChart = new Chart(trafficChartCanvas, {
 		scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
                 }
             }]
-        }
+        },
+		animation: {
+			easing: 'easeInOutQuad',
+			duration: 700,
+		}
     },
 });
-
-
-
 
 /* --------------------------------------------
 				Daily Traffic Chart
