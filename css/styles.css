@@ -765,24 +765,23 @@ input:checked + .slider:before {
 /* line 56, ../scss/component/_switch.scss */
 .switch-text {
   position: absolute;
-  top: 4px;
+  top: 5px;
   left: 10px;
-  right: 0;
-  bottom: 0;
   font-size: .9em;
-  color: #fff; }
+  color: #fff;
+  font-weight: 400; }
 
-/* line 66, ../scss/component/_switch.scss */
+/* line 65, ../scss/component/_switch.scss */
 .switch-container {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
   margin-top: 7px; }
-  /* line 72, ../scss/component/_switch.scss */
+  /* line 71, ../scss/component/_switch.scss */
   .switch-container .switch-heading {
     width: 200px; }
-  /* line 75, ../scss/component/_switch.scss */
+  /* line 74, ../scss/component/_switch.scss */
   .switch-container label {
     margin-right: 0.5em; }
 

@@ -190,7 +190,7 @@
 					<button form="message-users-form" class="send-save-button" value="submit" id="message-user-send-button" type="submit">Send</button>
 				</form>
 			</section>
-			<section id="dashboard-settings">
+			<section id="dashboard-settings" onload="checkSettings()">
 				<h2 class="dashboard-heading">Dashboard Settings</h2>
 				<form>
 					<div class="switch-container">
@@ -198,7 +198,7 @@
 						<label class="switch" for="email-checkbox">
 							<input type="checkbox" checked id="email-checkbox" name="email-checkbox">
 							<span class="slider">
-								<span class="switch-text">YES</span>
+								<span class="switch-text" id="email-checkbox-text"></span>
 							</span>
 						</label>
 					</div>
@@ -207,7 +207,7 @@
 						<label class="switch" for="profile-checkbox">
 							<input type="checkbox" checked id="profile-checkbox" name="profile-checkbox">
 							<span class="slider">
-								<span class="switch-text">YES</span>
+								<span class="switch-text" id="profile-checkbox-text"></span>
 							</span>
 						</label>
 					</div>
@@ -216,8 +216,8 @@
 						<option value="a-c-s-t">Australian Central Standard Time (ACST)</option>
 						<option value="a-w-s-t">Australian Western Standard Time (AWST)</option>
 					</select>
-					<button class="send-save-button" type="submit">Save</button>
-					<button class="cancel-button" type="button">Cancel</button>
+					<button class="send-save-button" type="submit" id="dashboard-settings-save">Save</button>
+					<button class="cancel-button" type="button" id="dashboard-settings-cancel">Cancel</button>
 				</form>
 			</section>
 		</section>
