@@ -23,6 +23,7 @@ nav {
 	img {
 		width: 30px;
 		display: inline;
+		cursor: pointer;
 		@include mq(tablet) {
 			width: 70%;
 		}
@@ -32,6 +33,7 @@ nav {
 		font-size: .8em;
 		display: inline;
 		color: $font-color-light;
+		cursor: pointer;
 		@include mq(tablet) {
 			display: none;
 		}
@@ -52,12 +54,16 @@ nav {
 	}
 	.nav-selected {
 		border-left: solid 2.8px $alert-color;
+		padding-left: 9.2px; 
 		transition: 0.2s ease-in;
 		@include mq(tablet) {
 			border-left-width: 4px;
+			padding-left: 8px; 
 		}
+	}
 }
-}
+
+
 
 #nav-screen-overlay {
 	position: fixed;

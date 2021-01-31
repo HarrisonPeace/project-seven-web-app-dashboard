@@ -75,4 +75,17 @@
 
 #notification-icon {
 	width: 100%;
+	cursor: pointer;
+	animation-name: wobble;
+  	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes wobble {
+	0%   {transform: rotate(15deg)}
+	15%  {transform: rotate(-15deg)}
+	30%  {transform: rotate(15deg)}
+	45%  {transform: rotate(0deg)}
+	100% {transform: rotate(0deg)}
 }

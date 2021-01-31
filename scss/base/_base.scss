@@ -22,7 +22,7 @@ a {
 	font-weight: 500;
 	transition: font-size .4s;
 	font-size: 0.9em;
-	&:click {
+	&:visited {
 		color: $primary-color;
 	}
 }

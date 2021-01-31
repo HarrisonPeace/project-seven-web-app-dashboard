@@ -19,16 +19,16 @@ let trafficHourly = document.getElementById('traffic-hourly');
 let trafficDaily = document.getElementById('traffic-daily');
 let trafficWeekly = document.getElementById('traffic-weekly');
 let trafficMonthly = document.getElementById('traffic-monthly');
-let trafficButtons = document.getElementsByClassName('traffic-buttons')
+let trafficButtons = document.getElementsByClassName('traffic-buttons');
 
-trafficHourly.addEventListener('click', () => {updateTrafficChart(trafficDataHourlyLabels, trafficDataHourly, trafficHourly)}, false);
-trafficDaily.addEventListener('click', () => {updateTrafficChart(trafficDataDailyLabels, trafficDataDaily, trafficDaily)}, false);
-trafficWeekly.addEventListener('click', () => {updateTrafficChart(trafficDataWeeklyLabels, trafficDataWeekly, trafficWeekly)}, false);
-trafficMonthly.addEventListener('click', () => {updateTrafficChart(trafficDataMonthlyLabels, trafficDataMonthly, trafficMonthly)}, false);
+trafficHourly.addEventListener('click', () => {updateTrafficChart(trafficDataHourlyLabels, trafficDataHourly, trafficHourly);}, false);
+trafficDaily.addEventListener('click', () => {updateTrafficChart(trafficDataDailyLabels, trafficDataDaily, trafficDaily);}, false);
+trafficWeekly.addEventListener('click', () => {updateTrafficChart(trafficDataWeeklyLabels, trafficDataWeekly, trafficWeekly);}, false);
+trafficMonthly.addEventListener('click', () => {updateTrafficChart(trafficDataMonthlyLabels, trafficDataMonthly, trafficMonthly);}, false);
 
 function updateTrafficChart (trafficLables, trafficData, dataFormat) {
 	trafficChart.data.labels = trafficLables;
-	trafficChart.config.data.datasets[0].data = trafficData
+	trafficChart.config.data.datasets[0].data = trafficData;
 	trafficChart.update();
 	let i;
 	for (i = 0; i < trafficButtons.length; i++) {
@@ -38,7 +38,8 @@ function updateTrafficChart (trafficLables, trafficData, dataFormat) {
 }
 let trafficChartCanvas = document.getElementById('traffic-chart').getContext('2d');
 let trafficChart = new Chart(trafficChartCanvas, {
-	maintainAspectRatio: 0,
+	responsive: true,
+	maintainAspectRatio: false,
     type: 'line',
     data: {
         labels: trafficDataHourlyLabels,
@@ -98,6 +99,8 @@ let trafficChart = new Chart(trafficChartCanvas, {
 var dailyTrafficChartCanvas = document.getElementById('daily-traffic-chart').getContext('2d');
 var dailyTrafficChart = new Chart(dailyTrafficChartCanvas, {
     type: 'bar',
+	responsive: true,
+	maintainAspectRatio: false,
     data: {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [{
@@ -154,6 +157,8 @@ var dailyTrafficChart = new Chart(dailyTrafficChartCanvas, {
 var mobileUsersCanvas = document.getElementById('mobile-users-chart').getContext('2d');
 var mobileUsers = new Chart(mobileUsersCanvas, {
     type: 'doughnut',
+	responsive: true,
+	maintainAspectRatio: false,
     data: {
         labels: ['Phones', 'Tablets', 'Desktop'],
         datasets: [{
