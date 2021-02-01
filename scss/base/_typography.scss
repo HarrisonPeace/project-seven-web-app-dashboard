@@ -28,29 +28,6 @@ select {
 	color: $font-color-dark;
 }
 
-#logo-app {
-	font-weight: 100;
-	font-size: 1.6em;
-	display: inline-block;
-	color: $font-color-light;
-}
-
-#logo-your {
-	font-weight: 900;
-	font-size: 1.6em;
-	display: inline-block;
-	position: relative;
-	color: $font-color-light;
-}
-
-#logo-tm {
-	font-weight: 300;
-	font-size: .4em;
-	padding-bottom: 60%;
-	position: absolute;
-	color: $font-color-light;
-}
-
 p,
 placeholder
 #social-stats span,
@@ -80,4 +57,31 @@ p {
 
 form {
 	font-size: .85em;
+}
+
+/* --------------------------------------------
+				Logo
+-----------------------------------------------*/
+
+#logo-app {
+	font-weight: 100;
+	font-size: 1.6em;
+	display: inline-block;
+	color: $font-color-light;
+}
+
+#logo-your {
+	font-weight: 900;
+	font-size: 1.6em;
+	display: inline-block;
+	position: relative;
+	color: $font-color-light;
+}
+
+#logo-tm {
+	font-weight: 300;
+	font-size: .4em;
+	padding-bottom: 60%;
+	position: absolute;
+	color: $font-color-light;
 }

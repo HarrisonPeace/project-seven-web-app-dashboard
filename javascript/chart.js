@@ -1,11 +1,16 @@
 // JavaScript Document
 
+/* --------------------------------------------
+			Global Chart Atributes
+-----------------------------------------------*/
+
 Chart.defaults.global.defaultFontColor = '#4d4d4d';
 Chart.defaults.global.defaultFontFamily = "'Nunito Sans', sans-serif";
 
 /* --------------------------------------------
 				Traffic Chart
 -----------------------------------------------*/
+
 let trafficDataHourly = [87, 11, 7, 10, 8, 80, 100, 98, 70, 50, 30, 50];
 let trafficDataHourlyLabels = ['1am', '3am', '5am', '7am', '9am', '11am', '1pm', '3pm', '5pm', '7pm', '9pm', '11pm'];
 let trafficDataDaily = [523, 721, 1101, 730, 834, 723, 1267, 476, 129, 894, 1123, 654];
@@ -36,6 +41,8 @@ function updateTrafficChart (trafficLables, trafficData, dataFormat) {
 	}
 	dataFormat.className = "traffic-buttons traffic-button-focus";
 }
+
+//Traffic Chart
 let trafficChartCanvas = document.getElementById('traffic-chart').getContext('2d');
 let trafficChart = new Chart(trafficChartCanvas, {
 	responsive: true,
@@ -94,8 +101,9 @@ let trafficChart = new Chart(trafficChartCanvas, {
 });
 
 /* --------------------------------------------
-				Daily Traffic Chart
+			Daily Traffic Chart
 -----------------------------------------------*/
+
 var dailyTrafficChartCanvas = document.getElementById('daily-traffic-chart').getContext('2d');
 var dailyTrafficChart = new Chart(dailyTrafficChartCanvas, {
     type: 'bar',
@@ -152,8 +160,9 @@ var dailyTrafficChart = new Chart(dailyTrafficChartCanvas, {
 });
 
 /* --------------------------------------------
-				Mobile Users Chart
+			Mobile Users Chart
 -----------------------------------------------*/
+
 var mobileUsersCanvas = document.getElementById('mobile-users-chart').getContext('2d');
 var mobileUsers = new Chart(mobileUsersCanvas, {
     type: 'doughnut',

@@ -14,12 +14,11 @@ sideNavButton.addEventListener('click', () => {
 	dashboardNavigation.style.display = 'block';
 	dashboardNavigation.style.position = 'fixed';
 	navScreenOverlay.style.display = 'block';
-}, false);
-
-navScreenOverlay.addEventListener('click', () => {
-	dashboardNavigation.style.display = 'none';
-	dashboardNavigation.style.position = 'fixed';
-	navScreenOverlay.style.display = 'none';
+	navScreenOverlay.addEventListener('click', () => {
+		dashboardNavigation.style.display = 'none';
+		dashboardNavigation.style.position = 'fixed';
+		navScreenOverlay.style.display = 'none';
+	}, false);
 }, false);
 
 dashboardNavigation.addEventListener("mouseover", function(event) {
@@ -41,7 +40,7 @@ dashboardNavigation.addEventListener("mouseleave", () => {
 }, false);
 
 /* --------------------------------------------
-				Alert
+				Alert Box
 -----------------------------------------------*/
 
 let alertExitButton = document.querySelector('#alert-container img');
@@ -52,19 +51,35 @@ alertExitButton.addEventListener("click", () => {
 }, false);
 
 /* --------------------------------------------
-				Message User Form
+		      Message User Form
 -----------------------------------------------*/
 
-let messageUsersForm = document.getElementById('message-users-form');
+let messageUserSendButton = document.querySelector('#message-user-send-button');
 let userSearch = document.getElementById('user-search');
 let userSearchTextArea = document.getElementById('user-search-textarea');
 
-messageUsersForm.addEventListener('submit', function(e) {
+messageUserSendButton.addEventListener('click', function() {
+	if (userSearch.value === '' && userSearchTextArea.value === '') {
+		createAlertBox(`Please select a user and your write message before sending`);
+	} else if (userSearch.value === '') {
+		createAlertBox(`Please select a user before sending your message`);	   
+	} else if (userSearchTextArea.value === '') {
+		createAlertBox(`Please write your message before sending`);	   
+	} else {
+		createAlertBox(`Your message saying:<br><strong>"${userSearchTextArea.value}"</strong><br><br>has been sent to:<br><strong>${userSearch.value}</strong>`);
+		userSearch.value = '';
+		userSearchTextArea.value = '';
+	}
+});
+
+/*Below code for submitting form without custom alert box (both text and user fields had 'required attribute' and button type set to submit)*/
+/*let messageUsersForm = document.getElementById('message-users-form');*/
+/*messageUsersForm.addEventListener('submit', function(e) {
 	e.preventDefault();
-	alert(`Your message saying "${userSearchTextArea.value}" has been sent to ${userSearch.value}`);
+	createAlertBox(`Your message saying:<br><strong>"${userSearchTextArea.value}"</strong><br><br>has been sent to:<br><strong>${userSearch.value}</strong>`);
 	userSearch.value = '';
 	userSearchTextArea.value = '';
-});
+});*/
 
 /* --------------------------------------------
 				Settings Form
@@ -101,7 +116,6 @@ function updateProfileSettingSlider(trueStatement) {
 }
 
 //Cancel Button
-
 dashboardSettingsCancel.addEventListener('click', function(e) {
 	e.preventDefault();
 	revertToSavedSettings();
@@ -133,7 +147,6 @@ function revertToSavedSettings() {
 }
 
 //Save Button
-
 dashboardSettingsSave.addEventListener('click', function(e) {
 	e.preventDefault();
 	localStorage.setItem("savedEmailSetting", emailCheckbox.checked);
@@ -141,6 +154,7 @@ dashboardSettingsSave.addEventListener('click', function(e) {
 	localStorage.setItem("savedTimeZone", timeZone.value);
 }, false);
 
+//Local storage inital values
 window.onload = function() {
 	if (localStorage.getItem("hasCodeRunBefore") === null) {
 		localStorage.setItem("savedEmailSetting", emailCheckbox.checked);
@@ -162,11 +176,10 @@ profileCheckbox.addEventListener('change', function() {
 	updateProfileSettingSlider(profileCheckbox.checked);
 });
 
-//Local Storage
-
 /* --------------------------------------------
 				Notifactions
 -----------------------------------------------*/
+
 let notificationIcon = document.querySelector('#notification-icon');
 let notificationAlert = document.querySelector('#notification-alert');
 let notificationContainer = document.querySelector('#notification-container');
@@ -189,4 +202,33 @@ for (i = 0; i < notificationExitButtons.length; i++) {
 			notificationAlert.style.display = "none";
 		}
 	}, false);
+}
+
+/* --------------------------------------------
+				Alert Box
+-----------------------------------------------*/
+
+let mainContainer = document.querySelector('main');
+
+function createAlertBox (text) {
+	const newDiv = document.createElement("div");
+	newDiv.innerHTML = `<h3>${text}</h3><img src="icons/icon-x.png" alt="exit-alert-icon" id="exit-alert">`;
+	newDiv.id = 'alert-box';
+	document.body.insertBefore(newDiv, mainContainer);
+	navScreenOverlay.style.display = 'block';
+	let alertBox = document.querySelector('#alert-box');
+	let exitAlert = document.querySelector('#exit-alert');
+	navScreenOverlay.removeEventListener('click', () => {
+		dashboardNavigation.style.display = 'none';
+		dashboardNavigation.style.position = 'fixed';
+		navScreenOverlay.style.display = 'none';
+	}, false);
+	exitAlert.addEventListener('click', () => {
+		alertBox.remove();
+		navScreenOverlay.style.display = 'none';
+	}, false);
+	exitAlert.removeEventListener('change', function() {
+		alertBox.remove();
+		navScreenOverlay.style.display = 'none';
+	});
 }

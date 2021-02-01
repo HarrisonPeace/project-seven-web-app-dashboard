@@ -248,15 +248,15 @@
 			<section id="message-users-form-container">
 				<h2 class="dashboard-heading">Message User</h2>
 				<form id="message-users-form" method="post">
-					<input type="search" id="user-search" placeholder="Search For User" required list="message-user-search-terms" autocomplete>
+					<input type="search" id="user-search" placeholder="Search For User" list="message-user-search-terms" autocomplete>
 					<datalist id="message-user-search-terms">
    						<option value="Victoria Chambers"></option>
 						<option value="Dale Byrd"></option>
 						<option value="Dawn Wood"></option>
 						<option value="Dan Oliver"></option>
 					</datalist>
-					<textarea required id="user-search-textarea"></textarea>
-					<button form="message-users-form" class="send-save-button" value="submit" id="message-user-send-button" type="submit">Send</button>
+					<textarea id="user-search-textarea"></textarea>
+					<button class="send-save-button"  id="message-user-send-button" type="button">Send</button>
 				</form>
 			</section>
 			<section id="dashboard-settings" onload="checkSettings()">
