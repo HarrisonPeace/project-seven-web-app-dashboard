@@ -83,10 +83,7 @@ main h2 {
 		}
 	}
 	img {
-		height: 15px;
-		display: inline-block;
 		margin-right: 14px;
-		cursor: pointer;
 	}
 }
 
@@ -201,7 +198,7 @@ main h2 {
 }
 
 /* --------------------------------------------
-				New Members + Recent Activity
+			New Members + Recent Activity
 -----------------------------------------------*/
 
 .contact-info {
@@ -292,17 +289,11 @@ main h2 {
 #notification-container {
 	position: absolute;
 	background-color: $primary-color;
-	padding: 5px 0;
 	right: 75px;
     top: 50px;
     border-radius: 0px 0px 10px 10px;
 	border: solid $white 0.1px;
     border-top: none;
-	img {
-    height: 15px;
-    display: inline;
-    cursor: pointer;
-	}
 	p {
 		margin: 0;
 		font-size: .8em;
@@ -312,11 +303,14 @@ main h2 {
 	}
 	div {
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
-		margin: 5px 0;
+		margin: 7px;
 		padding: 8px 5px;
 		width: 150px;
+		@include mq(tablet) {
+			width: 230px;
+		}
 	}
 }
 
@@ -340,10 +334,12 @@ main h2 {
 		margin: 1em;
 	}
 	img {
-		height: 15px;
-    	cursor: pointer;
     	position: fixed;
     	top: 110px;
     	right: calc(50% - 140px);
 	}
+}
+
+#exit-alert:hover {
+	background-color: $primary-color;
 }

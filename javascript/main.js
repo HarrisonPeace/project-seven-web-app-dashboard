@@ -212,7 +212,7 @@ let mainContainer = document.querySelector('main');
 
 function createAlertBox (text) {
 	const newDiv = document.createElement("div");
-	newDiv.innerHTML = `<h3>${text}</h3><img src="icons/icon-x.png" alt="exit-alert-icon" id="exit-alert">`;
+	newDiv.innerHTML = `<h3>${text}</h3><img src="icons/icon-x.png" alt="exit-alert-icon" id="exit-alert" class="exit-icon">`;
 	newDiv.id = 'alert-box';
 	document.body.insertBefore(newDiv, mainContainer);
 	navScreenOverlay.style.display = 'block';
